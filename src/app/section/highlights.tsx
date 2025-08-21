@@ -5,11 +5,11 @@ import { HighlightsData } from '../../../data/highlights-data';
 const HighlightsSection = () => {
   return (
     <div className="mx-3 md:mx-30 my-10 md:my-20  ">
-      <div className="flex flex-row justify-between items-center mb-12  pb-12 border-b border-neutral-800 w-full h-full ">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-12  pb-12 border-b border-neutral-800 w-full h-full ">
         {/* atas */}
-        <div className="text-white text-display-xl font-bold max-w-[756px]">
-          I turn ideas and designs into functional, accessible, and performant
-          websites{' '}
+        <div className="text-white text-display-md md:text-display-xl font-bold max-w-[756px]">
+          I turn ideas and designs into functional, accessible, and
+          performant websites{' '}
           <span className="text-primary">
             using modern frontend technologies
           </span>{' '}
@@ -66,20 +66,26 @@ const HighlightsSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* HighlightsSection */}
             {HighlightsData.map((item, id) => (
-              <div key={id} className=" flex flex-col gap-6">
-                <div>
+              <div
+                key={id}
+                className=" flex flex-col gap-6 justify-between"
+              >
+                <div className="w-10 h-10">
                   <Image
                     src={item.icon}
                     alt={item.title}
                     width={40}
                     height={40}
+                    className="w-10 h-10 object-fit-cover"
                   />
                 </div>
                 <div>
                   <div className="text-xl font-bold text-white">
                     {item.title}
                   </div>
-                  <div className="text-md text-neutral-400">{item.desc}</div>
+                  <div className="text-md text-neutral-400">
+                    {item.desc}
+                  </div>
                 </div>
               </div>
             ))}

@@ -1,45 +1,45 @@
 type ToolsProps = {
   id: number;
   label: string;
-  src: string;
+  icon: string;
   score: number;
 };
 
-export const Tools: ToolsProps[] = [
+export const ToolsData: ToolsProps[] = [
   {
     id: 1,
     label: 'HTML',
-    src: '/icons/icon-html.svg',
+    icon: '/icons/icon-html5.svg',
     score: 100,
   },
   {
     id: 2,
     label: 'CSS',
-    src: '/icons/icon-css.svg',
+    icon: '/icons/icon-css3.svg',
     score: 90,
   },
   {
     id: 3,
     label: 'JavaScript',
-    src: '/icons/icon-js.svg',
+    icon: '/icons/icon-js.svg',
     score: 90,
   },
   {
     id: 4,
     label: 'Typescript',
-    src: '/icons/icon-typescript.svg',
+    icon: '/icons/icon-ts.svg',
     score: 80,
   },
   {
     id: 5,
     label: 'Sequalize',
-    src: '/icons/icon-sequalize.svg',
+    icon: '/icons/icon-sequalize.svg',
     score: 80,
   },
   {
     id: 6,
     label: 'Mongo DB',
-    src: '/icons/icon-mongodb.svg',
+    icon: '/icons/icon-mongodb.svg',
     score: 75,
   },
 ];
