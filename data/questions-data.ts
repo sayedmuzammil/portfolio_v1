@@ -35,4 +35,22 @@ export const QuestionList: QuestionProps[] = [
     answer:
       'I mainly work with HTML, CSS, JavaScript, and frameworks like React, Next.js, and Vue. I also have experience using Tailwind CSS, TypeScript, and working with APIs.',
   },
+  {
+    id: 6,
+    question: 'Can you convert Figma or Sketch designs into code?',
+    answer:
+      'I mainly work with HTML, CSS, JavaScript, and frameworks like React, Next.js, and Vue. I also have experience using Tailwind CSS, TypeScript, and working with APIs.',
+  },
+  {
+    id: 7,
+    question: 'Do you collaborate with backend developers or teams?',
+    answer:
+      'I mainly work with HTML, CSS, JavaScript, and frameworks like React, Next.js, and Vue. I also have experience using Tailwind CSS, TypeScript, and working with APIs.',
+  },
+  {
+    id: 8,
+    question: 'Are you available for full-time roles?',
+    answer:
+      'I mainly work with HTML, CSS, JavaScript, and frameworks like React, Next.js, and Vue. I also have experience using Tailwind CSS, TypeScript, and working with APIs.',
+  },
 ];

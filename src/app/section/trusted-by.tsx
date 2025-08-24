@@ -14,7 +14,7 @@ const TrustedBySection = () => {
   const rating4 = testimony4?.rating ?? 0;
 
   return (
-    <section className=" w-full my-10 md:my-20">
+    <section className=" w-full py-10 md:py-20">
       {/* background */}
 
       <div className=" w-full h-full px-4 md:px-35  ">
