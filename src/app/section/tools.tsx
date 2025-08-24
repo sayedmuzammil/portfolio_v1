@@ -7,7 +7,7 @@ import Image from 'next/image';
 const ToolsSection = () => {
   return (
     <section className="mx-3 md:mx-30 py-10 md:py-20">
-      <div className="flex flex-col md:flex-row justify-between mb-12  pb-12 w-full  ">
+      <div className="flex flex-col md:flex-row justify-between  w-full  ">
         <div className="w-[367px] flex flex-col justify-between">
           {/* kiri */}
           <div className=" flex flex-col gap-4">

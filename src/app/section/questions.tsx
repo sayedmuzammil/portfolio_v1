@@ -25,7 +25,7 @@ const QuestionsSection = () => {
             </div>
           </div>
         </div>
-        <div className="h-[356px] md:h-[466px] flex flex-col md:flex-row gap-4 overflow-visible">
+        <div className="h-[356px] md:h-[466px] flex flex-col md:flex-row gap-4 overflow-hidden">
           {QuestionList.map((item: any) => (
             <div
               key={item.id}

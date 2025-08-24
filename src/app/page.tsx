@@ -14,7 +14,7 @@ import ContactUsSection from './section/testcontact';
 export default function Home() {
   return (
     <>
-      <div className=" w-full min-h-screen ">
+      <div className=" custom-container min-h-screen ">
         <Navbar />
         <HeroSection />
         <CapabilitiesSection />

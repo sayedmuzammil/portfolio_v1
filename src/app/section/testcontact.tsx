@@ -68,25 +68,28 @@ export default function ContactUsSection() {
   }
 
   return (
-    <section id="contact-us" className="relative w-full  px-20 ">
+    <section id="contact-us" className="relative w-full px-5 md:px-20 ">
       {/* background */}
-      <div className=" absolute -z-10 w-full h-full  -translate-x-20 ">
+
+      <div className=" absolute -z-10 w-full h-full -translate-x-5 md:-translate-x-20 ">
+        <div className="absolute w-full h-full bg-linear-to-t from-white/0  to-black/100" />
         <div
           className="absolute -z-10 w-full h-full
-                   bg-radial-[at_0%_0%] from-[#149BB0]/60 to-[#149BB0]/0 to-[50%]"
+                   bg-linear-0 from-[#149BB0]/60 to-[#149BB0]/0 to-[80%] "
         />
+
         <Image
           src="/images/glassBoard.svg"
           alt="Edwin"
           width={1074}
           height={488}
-          className="top-0 absolute -z-10 md:ml-36"
+          className="bottom-0 absolute -z-10 w-full h-full object-cover"
         />
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between mb-12  pb-12 w-full">
-        <div className="flex flex-col justify-between">
-          <div className=" flex flex-col gap-4 bg-black py-10 px-6">
+      <div className="flex flex-col md:flex-row justify-between pb-12 w-full">
+        <div className="flex flex-col md:flex-row justify-between gap-10">
+          <div className=" flex flex-col gap-4 bg-black border-2 border-neutral-900 rounded-2xl py-10 px-6 ">
             <div className="text-display-md md:text-display-2xl font-bold text-white">
               Let’s{' '}
               <span className="text-contact-highlight">Build Something</span>{' '}
@@ -104,6 +107,69 @@ export default function ContactUsSection() {
                   loading={loading}
                 />
               </div>
+            </div>
+          </div>
+          <div className=" flex flex-col justify-between py-10 ">
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col ">
+                {/* address */}
+                <div className="text-xl font-semibold text-white">Address</div>
+                <div className="text-md text-neutral-400">
+                  Jakarta, Indonesia
+                </div>
+              </div>
+              <div className="w-full border-b-2 border-neutral-900" />
+              <div className="flex flex-col">
+                {/* Contact */}
+                <div className="text-xl font-semibold text-white">Contact</div>
+                <div className="text-md text-neutral-400">(+62) 1234567890</div>
+              </div>
+              <div className="w-full border-b-2 border-neutral-900" />
+
+              <div className="flex flex-col gap-5">
+                {/* Social Media */}
+                <div className="text-xl font-semibold text-white">
+                  Social Media
+                </div>
+                <div className="flex flex-row gap-3">
+                  <div className="flex items-center justify-center w-10 h-10 bg-transparentx border border-neutral-800 rounded-full">
+                    <Image
+                      src="/icons/icon-facebook.svg"
+                      alt="facebook-icon"
+                      width={10}
+                      height={20}
+                    />
+                  </div>
+                  <div className="flex items-center justify-center w-10 h-10 bg-transparentx border border-neutral-800 rounded-full">
+                    <Image
+                      src="/icons/icon-instagram.svg"
+                      alt="instagram-icon"
+                      width={20}
+                      height={20}
+                    />
+                  </div>
+                  <div className="flex items-center justify-center w-10 h-10 bg-transparentx border border-neutral-800 rounded-full">
+                    <Image
+                      src="/icons/icon-linkedIn.svg"
+                      alt="linkedIn-icon"
+                      width={16}
+                      height={16}
+                    />
+                  </div>
+                  <div className="flex items-center justify-center w-10 h-10 bg-transparentx border border-neutral-800 rounded-full">
+                    <Image
+                      src="/icons/icon-tiktok.svg"
+                      alt="tiktok-icon"
+                      width={17}
+                      height={20}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-display-md md:text-display-3xl text-white font-bold">
+              GET IN TOUCH
             </div>
           </div>
         </div>

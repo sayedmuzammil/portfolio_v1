@@ -211,3 +211,11 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+@layer components {
+  .custom-container {
+    margin: 0 auto;
+    @apply max-w-360 ;
+  }
+}
