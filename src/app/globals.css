@@ -147,6 +147,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-table-highlight: var(--primary-400);
+  --color-journey-highlight: var(--primary-300);
+    --color-question-background: var(--primary-400);
+    --color-photo-background: var(--primary-300);
+        --color-contact-highlight: var(--primary-300);
+
+
+
+
 
 }
 

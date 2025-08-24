@@ -4,18 +4,18 @@ import { HighlightsData } from '../../../data/highlights-data';
 
 const HighlightsSection = () => {
   return (
-    <div className="mx-3 md:mx-30 my-10 md:my-20  ">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-12  pb-12 border-b border-neutral-800 w-full h-full ">
+    <section className="mx-3 md:mx-30 my-10 md:my-20  ">
+      <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 mb-6 md:mb-12  pb-6 md:pb-12 border-b border-neutral-800 w-full h-full ">
         {/* atas */}
         <div className="text-white text-display-md md:text-display-xl font-bold max-w-[756px]">
-          I turn ideas and designs into functional, accessible, and
-          performant websites{' '}
+          I turn ideas and designs into functional, accessible, and performant
+          websites{' '}
           <span className="text-primary">
             using modern frontend technologies
           </span>{' '}
           .
         </div>
-        <div className="flex flex-col min-h-[150px] justify-between items-start ">
+        <div className="flex flex-col md:min-h-[150px] justify-between items-start ">
           <div className="text-neutral-400 text-lg ">About Me</div>
           <div className="flex flex-row gap-4">
             <div className="flex items-center justify-center w-10 h-10 bg-transparentx border border-neutral-800 rounded-full">
@@ -63,12 +63,12 @@ const HighlightsSection = () => {
             height={513}
             className=""
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 divide-y-2 divide-neutral-800">
             {/* HighlightsSection */}
             {HighlightsData.map((item, id) => (
               <div
                 key={id}
-                className=" flex flex-col gap-6 justify-between"
+                className="flex flex-col gap-6 justify-between py-6 md:py-0 "
               >
                 <div className="w-10 h-10">
                   <Image
@@ -83,16 +83,14 @@ const HighlightsSection = () => {
                   <div className="text-xl font-bold text-white">
                     {item.title}
                   </div>
-                  <div className="text-md text-neutral-400">
-                    {item.desc}
-                  </div>
+                  <div className="text-md text-neutral-400">{item.desc}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,37 +1,53 @@
 import React from 'react';
 
-interface CapabilitiesProps {
+interface SkillsProps {
   id: number;
-  label: string;
+  skill: string;
+  withMe: boolean;
+  others: boolean;
 }
 
-export const CababilitiesData: CapabilitiesProps[] = [
+export const SkillsData: SkillsProps[] = [
   {
     id: 1,
-    label: 'React Expert',
+    skill: 'React Expert',
+    withMe: true,
+    others: false,
   },
   {
     id: 2,
-    label: 'Pixel Perfect',
+    skill: 'Pixel Perfect',
+    withMe: true,
+    others: false,
   },
   {
     id: 3,
-    label: 'TypeScript Proficiency',
+    skill: 'TypeScript Proficiency',
+    withMe: true,
+    others: false,
   },
   {
     id: 4,
-    label: 'Clean, Maintainable Code',
+    skill: 'Clean, Maintainable Code',
+    withMe: true,
+    others: false,
   },
   {
     id: 5,
-    label: 'Performance Optimization',
+    skill: 'Performance Optimization',
+    withMe: true,
+    others: false,
   },
   {
     id: 6,
-    label: 'Responsive Website',
+    skill: 'Responsive Website',
+    withMe: true,
+    others: false,
   },
   {
     id: 7,
-    label: 'Ul Design Proficiency (Figma)',
+    skill: 'Ul Design Proficiency (Figma)',
+    withMe: true,
+    others: false,
   },
 ];

@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const CapabilitiesSection = () => {
   return (
-    <div className="w-full mt-20 md:mt-0">
+    <section className="w-full mt-20 md:mt-0">
       <div className="relative h-15.5 md:h-[108px] overflow-hidden bg-primary">
         <motion.ul
           className="flex items-center gap-3.5 whitespace-nowrap w-max h-full"
@@ -35,7 +35,7 @@ const CapabilitiesSection = () => {
           ))}
         </motion.ul>
       </div>
-    </div>
+    </section>
   );
 };
 

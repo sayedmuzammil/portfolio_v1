@@ -24,7 +24,6 @@ export const TrustedVoices: TrustedVoiceProps[] = [
     id: 2,
     highlight: '3X',
     title: 'Improved user engagement and sign-ups',
-
     desc: "Edwin's expertise in frontend development is remarkable. He brings creativity and innovation to the table, ensuring that every project is not only functional but also visually appealing",
     rating: 5,
     icon: '/icons/icon-avatar2.svg',
@@ -33,8 +32,7 @@ export const TrustedVoices: TrustedVoiceProps[] = [
   },
   {
     id: 3,
-    highlight: '8X',
-    title: 'More users converted after redesign',
+
     desc: "Edwin's work ethic and dedication are truly inspiring. He approaches challenges with a positive attitude and consistently finds effective solutions.",
     rating: 5,
     icon: '/icons/icon-avatar3.svg',
@@ -43,8 +41,7 @@ export const TrustedVoices: TrustedVoiceProps[] = [
   },
   {
     id: 4,
-    highlight: '8X',
-    title: 'More users converted after redesign',
+
     desc: 'Edwin has a unique ability to transform complex ideas into user-friendly designs. His contributions have significantly enhanced our projects.',
     rating: 5,
     icon: '/icons/icon-avatar4.svg',

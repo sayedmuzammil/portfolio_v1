@@ -14,7 +14,7 @@ export const journeyData: journeyProps[] = [
     durationStart: '2025',
     durationEnd: 'Present',
     desc: 'Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.',
-    icon: '/icons/icon-airbnd.svg',
+    icon: '/icons/icon-airbnb.svg',
   },
   {
     id: 2,
