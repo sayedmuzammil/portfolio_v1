@@ -1,10 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import { HighlightsData } from '../../../data/highlights-data';
+import { motion } from 'framer-motion';
 
 const HighlightsSection = () => {
   return (
-    <section className="mx-3 md:mx-30 my-10 md:my-20  ">
+    <div className="mx-3 md:mx-30 my-10 md:my-20  ">
       <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 mb-6 md:mb-12  pb-6 md:pb-12 border-b border-neutral-800 w-full h-full ">
         {/* atas */}
         <div className="text-white text-display-md md:text-display-xl font-bold max-w-[756px]">
@@ -63,7 +66,7 @@ const HighlightsSection = () => {
             height={513}
             className=""
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 divide-y-2 divide-neutral-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 divide-y-2 md:divide-y-0 divide-neutral-800">
             {/* HighlightsSection */}
             {HighlightsData.map((item, id) => (
               <div
@@ -79,18 +82,23 @@ const HighlightsSection = () => {
                     className="w-10 h-10 object-fit-cover"
                   />
                 </div>
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
                   <div className="text-xl font-bold text-white">
                     {item.title}
                   </div>
                   <div className="text-md text-neutral-400">{item.desc}</div>
-                </div>
+                </motion.div>
               </div>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

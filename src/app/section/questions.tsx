@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { journeyData } from '../../../data/journey-data';
 import { Button } from '@/components/ui/button';
 import { QuestionList } from '../../../data/questions-data';
-import { motion, useReducedMotion } from 'motion/react';
+import { motion, Transition, useReducedMotion } from 'motion/react';
 
 const QuestionsSection = () => {
   const [activeCard, setActivCard] = useState(0);
@@ -24,9 +24,14 @@ const QuestionsSection = () => {
 
   const reduce = useReducedMotion();
 
-  const trackSpring = reduce
-    ? { type: 'tween', duration: 0 }
-    : { type: 'spring', stiffness: 500, damping: 40, mass: 0.9 };
+  const SPRING: Transition = {
+    type: 'spring',
+    stiffness: 500,
+    damping: 40,
+    mass: 0.9,
+  };
+  const INSTANT: Transition = { type: 'tween', duration: 0 };
+  const trackTransition: Transition = reduce ? INSTANT : SPRING;
 
   return (
     <section className="relative w-full py-10 md:py-20 flex flex-col gap-12 px-4 md:px-35">
@@ -34,7 +39,7 @@ const QuestionsSection = () => {
 
       <div className=" w-full h-full">
         <div className="flex w-full justify-start mb-10 md:mb-13 ">
-          <div className="w-full flex flex-row">
+          <div className="w-full flex flex-col md:flex-row gap-6">
             <div className="w-full flex flex-col items-start gap-4 ">
               <div className="text-display-md md:text-display-2xl font-bold text-white">
                 Still Got Questions?
@@ -44,7 +49,7 @@ const QuestionsSection = () => {
                 developer.
               </div>
             </div>
-            <div className="w-full flex flex-row justify-end items-end gap-3 ">
+            <div className="w-full flex flex-row justify-self-start md:justify-end items-center md:items-end gap-3 ">
               <Button
                 asChild
                 variant="default"
@@ -87,6 +92,7 @@ const QuestionsSection = () => {
             <motion.div
               className="flex gap-4"
               animate={{ x: -activeCard * 268 }}
+              transition={trackTransition}
             >
               {QuestionList.map((item: any) => {
                 const isOpen = openId === item.id;
@@ -103,7 +109,7 @@ const QuestionsSection = () => {
                         setOpenId(isOpen ? null : item.id);
                       }
                     }}
-                    className="group relative h-[356px] md:h-[466px]
+                    className="group relative min-h-[356px] md:h-[466px]
                     w-[252px] shrink-0               
                     hover:w-[379px]                 
                     border-2 border-neutral-900 p-6
@@ -134,7 +140,14 @@ const QuestionsSection = () => {
                         <div className="text-display-sm font-semibold text-white">
                           {item.question}
                         </div>
-                        <div className="text-md text-white hidden group-hover:block">
+                        <div className="text-md hidden text-white  group-hover:block">
+                          {item.answer}
+                        </div>
+                        <div
+                          className={`text-md md:hidden ${
+                            isOpen ? 'block' : 'hidden'
+                          }`}
+                        >
                           {item.answer}
                         </div>
                       </div>

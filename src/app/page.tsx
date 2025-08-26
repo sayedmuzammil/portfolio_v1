@@ -10,6 +10,7 @@ import TrustedBySection from './section/trusted-by';
 import QuestionsSection from './section/questions';
 import ContactSection from './section/contact';
 import ContactUsSection from './section/testcontact';
+import QuestionsSection2 from './section/questions2';
 
 export default function Home() {
   return (
@@ -24,7 +25,9 @@ export default function Home() {
         <PortofoliosSection />
         <JourneySection />
         <TrustedBySection />
-        <QuestionsSection />
+        {/* <QuestionsSection /> */}
+        <QuestionsSection2 />
+
         {/* <ContactSection /> */}
         <ContactUsSection />
       </div>
