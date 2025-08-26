@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 const JourneySection = () => {
   return (
-    <section className="relative w-full py-10 md:py-20 flex flex-col gap-12 px-4 md:px-35">
+    <section className="relative w-full py-10 md:py-20 flex flex-col gap-12 px-4 md:px-35 bg-black -z-50">
       {/* background */}
 
       <div className=" w-full h-full   ">

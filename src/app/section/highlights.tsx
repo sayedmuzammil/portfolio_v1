@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const HighlightsSection = () => {
   return (
-    <div className="mx-3 md:mx-30 my-10 md:my-20  ">
+    <div className="px-4 md:px-35 py-10 md:py-20 bg-black -z-50  ">
       <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 mb-6 md:mb-12  pb-6 md:pb-12 border-b border-neutral-800 w-full h-full ">
         {/* atas */}
         <div className="text-white text-display-md md:text-display-xl font-bold max-w-[756px]">

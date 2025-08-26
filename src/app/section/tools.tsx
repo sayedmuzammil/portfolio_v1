@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const ToolsSection = () => {
   return (
-    <section className="mx-3 md:mx-30 py-10 md:py-20">
+    <section className="px-4 md:px-35 py-10 md:py-20 bg-black -z-50">
       <div className="flex flex-col md:flex-row justify-between  w-full  ">
         <div className="w-full md:w-[367px] flex flex-col justify-between">
           {/* kiri */}

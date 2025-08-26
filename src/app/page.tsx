@@ -15,7 +15,7 @@ import QuestionsSection2 from './section/questions2';
 export default function Home() {
   return (
     <>
-      <div className=" custom-container  min-h-screen ">
+      <div className=" custom-container    ">
         <Navbar />
         <HeroSection />
         <CapabilitiesSection />

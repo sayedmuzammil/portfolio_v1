@@ -4,7 +4,7 @@ import { PortofoliosData } from '../../../data/portofolio-data';
 
 const PortofoliosSection = () => {
   return (
-    <section className="relative w-full my-10 md:my-20">
+    <section className="relative w-full py-10 md:py-20 bg-black -z-50">
       {/* background */}
 
       <div className=" w-full h-full px-4 md:px-35  ">

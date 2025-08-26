@@ -14,7 +14,7 @@ const TrustedBySection = () => {
   const rating4 = testimony4?.rating ?? 0;
 
   return (
-    <section className=" w-full py-10 md:py-20">
+    <section className=" w-full py-10 md:py-20 bg-black -z-50">
       {/* background */}
 
       <div className=" w-full h-full px-4 md:px-35  ">
@@ -32,9 +32,9 @@ const TrustedBySection = () => {
         <div className=" p-3 md:p-6 w-full">
           <div className="flex flex-col md:flex-row text-white w-full h-full gap-5  ">
             <div className="relative w-full md:max-w-[448px] ">
-              <div className=" absolute -z-10 w-full h-full  ">
+              <div className=" absolute  w-full h-full  ">
                 <div
-                  className="absolute -z-10 w-full h-full
+                  className="absolute  w-full h-full
                            bg-radial-[at_0%_0%] from-[#149BB0]/25 to-[#149BB0]/0 to-[50%]"
                 />
               </div>

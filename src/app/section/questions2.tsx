@@ -64,8 +64,8 @@ const QuestionsSection2 = () => {
   };
 
   return (
-    <section className="relative w-full py-10 md:py-20 flex flex-col gap-12 px-4 md:px-35">
-      <div className="w-full h-full">
+    <section className=" w-full h-full py-10 md:py-20  flex flex-col gap-12 px-4 md:px-35 bg-black">
+      <div className="w-full h-full ">
         {/* Header + controls */}
         <div className="flex w-full justify-start mb-10 md:mb-13">
           <div className="w-full flex flex-col md:flex-row gap-6">
@@ -235,7 +235,7 @@ const QuestionsSection2 = () => {
         </div>
       </div>
 
-      <div className="w-full border border-neutral-900" />
+      {/* <div className="w-full border border-neutral-900" /> */}
     </section>
   );
 };

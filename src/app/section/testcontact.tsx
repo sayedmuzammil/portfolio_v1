@@ -8,15 +8,6 @@ import Image from 'next/image';
 // import { ErrorDialog } from '@/components/ui/ErrorDialog';
 // import { SuccessDialog } from '@/components/ui/SuccessDialog';
 
-const services = [
-  { id: 'web', label: 'Web Development' },
-  { id: 'mobile', label: 'Mobile App Development' },
-  { id: 'uiux', label: 'UI/UX Design' },
-  { id: 'cloud', label: 'Cloud Solutions' },
-  { id: 'soft', label: 'Software Development' },
-  { id: 'other', label: 'Other' },
-];
-
 export default function ContactUsSection() {
   const [successOpen, setSuccessOpen] = React.useState(false);
   const [errorOpen, setErrorOpen] = React.useState(false);
@@ -48,19 +39,19 @@ export default function ContactUsSection() {
       setSuccessOpen(true);
       form.reset();
 
-      toast.success('Message sent', {
-        description: 'Thanks! We’ll be in touch shortly.',
-      });
+      // toast.success('Message sent', {
+      //   description: 'Thanks! We’ll be in touch shortly.',
+      // });
     } catch (err: any) {
       // ❌ gagal
       setErrorOpen(true);
-      toast.error('Send failed', {
-        description: 'We couldn’t send your message. Please try again.',
-        action: {
-          label: 'Retry',
-          onClick: () => formRef.current?.requestSubmit(),
-        },
-      });
+      // toast.error('Send failed', {
+      //   description: 'We couldn’t send your message. Please try again.',
+      //   action: {
+      //     label: 'Retry',
+      //     onClick: () => formRef.current?.requestSubmit(),
+      //   },
+      // });
       console.error(err?.message || err);
     } finally {
       setLoading(false);
@@ -68,10 +59,13 @@ export default function ContactUsSection() {
   }
 
   return (
-    <section id="contact-us" className="relative w-full px-5 md:px-20 ">
+    <section
+      id="contact-us"
+      className="relative w-full py-10 md:py-20 bg-black -z-50"
+    >
       {/* background */}
 
-      <div className=" absolute -z-10 w-full h-full -translate-x-5 md:-translate-x-20 ">
+      <div className=" absolute -z-10 w-full h-full ">
         <div className="absolute w-full h-full bg-linear-to-t from-white/0  to-black/100" />
         <div
           className="absolute -z-10 w-full h-full
@@ -81,23 +75,25 @@ export default function ContactUsSection() {
         <Image
           src="/images/glassBoard.svg"
           alt="Edwin"
-          width={1074}
-          height={488}
+          width={1440}
+          height={757}
           className="bottom-0 absolute -z-10 w-full h-full object-cover"
         />
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between pb-12 w-full">
+      <div className="flex flex-col md:flex-row justify-between px-5 md:px-30 pt-10 pb-12 w-full">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className=" flex flex-col gap-4 bg-black border-2 border-neutral-900 rounded-2xl py-10 px-6 ">
             <div className="text-display-md md:text-display-2xl font-bold text-white">
               Let’s{' '}
-              <span className="text-contact-highlight">Build Something</span>{' '}
+              <span className="text-contact-highlight">
+                Build Something
+              </span>{' '}
               Great
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              From code to design — here’s the tech that helps me turn ideas
-              into real products.
+              From code to design — here’s the tech that helps me turn
+              ideas into real products.
             </div>
             <div className="w-full ">
               <div className="mx-auto mt-8 max-w-3xl ">
@@ -113,7 +109,9 @@ export default function ContactUsSection() {
             <div className="flex flex-col gap-3">
               <div className="flex flex-col ">
                 {/* address */}
-                <div className="text-xl font-semibold text-white">Address</div>
+                <div className="text-xl font-semibold text-white">
+                  Address
+                </div>
                 <div className="text-md text-neutral-400">
                   Jakarta, Indonesia
                 </div>
@@ -121,8 +119,12 @@ export default function ContactUsSection() {
               <div className="w-full border-b-2 border-neutral-900" />
               <div className="flex flex-col">
                 {/* Contact */}
-                <div className="text-xl font-semibold text-white">Contact</div>
-                <div className="text-md text-neutral-400">(+62) 1234567890</div>
+                <div className="text-xl font-semibold text-white">
+                  Contact
+                </div>
+                <div className="text-md text-neutral-400">
+                  (+62) 1234567890
+                </div>
               </div>
               <div className="w-full border-b-2 border-neutral-900" />
 
@@ -203,10 +205,17 @@ export default function ContactUsSection() {
 
 const ContactForm = React.forwardRef<
   HTMLFormElement,
-  { onSubmit: (e: React.FormEvent<HTMLFormElement>) => void; loading: boolean }
+  {
+    onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+    loading: boolean;
+  }
 >(function ContactForm({ onSubmit, loading }, ref) {
   return (
-    <form ref={ref} onSubmit={onSubmit} className="mx-auto mt-8  space-y-6">
+    <form
+      ref={ref}
+      onSubmit={onSubmit}
+      className="mx-auto mt-8  space-y-6"
+    >
       {/* Name */}
       <div className="space-y-2">
         <label className="text-sm text-white" htmlFor="name">
