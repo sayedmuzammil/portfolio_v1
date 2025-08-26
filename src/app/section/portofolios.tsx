@@ -14,8 +14,8 @@ const PortofoliosSection = () => {
               Bridging Design and Development
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              These are real projects where I implemented frontend interfaces
-              with precision and attention to detail.
+              These are real projects where I implemented frontend
+              interfaces with precision and attention to detail.
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@ const PortofoliosSection = () => {
                     alt={item.title}
                     width={373}
                     height={373}
-                    className="rounded-md"
+                    className="rounded-md w-full md:w-[373px] md:h-[373px] object-cover"
                   />
                 </div>
                 <div>

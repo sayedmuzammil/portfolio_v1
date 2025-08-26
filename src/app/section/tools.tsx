@@ -8,15 +8,15 @@ const ToolsSection = () => {
   return (
     <section className="mx-3 md:mx-30 py-10 md:py-20">
       <div className="flex flex-col md:flex-row justify-between  w-full  ">
-        <div className="w-[367px] flex flex-col justify-between">
+        <div className="w-full md:w-[367px] flex flex-col justify-between">
           {/* kiri */}
           <div className=" flex flex-col gap-4">
             <div className="text-display-md md:text-display-2xl font-bold text-white">
               Tools I Use to Build
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              From code to design — here’s the tech that helps me turn ideas
-              into real products.
+              From code to design — here’s the tech that helps me turn
+              ideas into real products.
             </div>
           </div>
           <Button

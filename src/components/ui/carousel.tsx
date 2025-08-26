@@ -30,7 +30,8 @@ type CarouselContextProps = {
   canScrollNext: boolean;
 } & CarouselProps;
 
-const CarouselContext = React.createContext<CarouselContextProps | null>(null);
+const CarouselContext =
+  React.createContext<CarouselContextProps | null>(null);
 
 function useCarousel() {
   const context = React.useContext(CarouselContext);
@@ -111,7 +112,8 @@ function Carousel({
         api: api,
         opts,
         orientation:
-          orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
+          orientation ||
+          (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
         scrollPrev,
         scrollNext,
         canScrollPrev,
@@ -132,7 +134,10 @@ function Carousel({
   );
 }
 
-function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
+function CarouselContent({
+  className,
+  ...props
+}: React.ComponentProps<'div'>) {
   const { carouselRef, orientation } = useCarousel();
 
   return (
@@ -153,7 +158,10 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
   );
 }
 
-function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
+function CarouselItem({
+  className,
+  ...props
+}: React.ComponentProps<'div'>) {
   const { orientation } = useCarousel();
 
   return (

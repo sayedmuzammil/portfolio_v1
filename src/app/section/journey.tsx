@@ -15,8 +15,9 @@ const JourneySection = () => {
               My Journey in Tech
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              From small gigs to real-world challenges — each experience helped
-              me grow as a builder and problem-solver.{' '}
+              From small gigs to real-world challenges — each
+              experience helped me grow as a builder and
+              problem-solver.{' '}
             </div>
           </div>
         </div>
@@ -24,7 +25,7 @@ const JourneySection = () => {
           {journeyData.map((item: any) => (
             <div
               key={item.id}
-              className="relative max-w-[366px] flex flex-col gap-5 border border-neutral-900 p-5 rounded-2xl"
+              className="relative w-full md:max-w-[366px] flex flex-col gap-5 border border-neutral-900 p-5 rounded-2xl"
             >
               <div
                 className="absolute left-0 top-6 h-16 w-[3px] rounded-full
@@ -33,7 +34,9 @@ const JourneySection = () => {
 
               <div className="w-full flex flex-row justify-between items-center text-white">
                 <div className="flex flex-col justify-start">
-                  <div className="text-xl  font-bold">{item.role}</div>
+                  <div className="text-xl  font-bold">
+                    {item.role}
+                  </div>
                   <div className="text-md ">
                     {item.durationStart} - {item.durationEnd}
                   </div>
@@ -49,9 +52,16 @@ const JourneySection = () => {
               </div>
               <div className="border border-neutral-900" />
               <div className="w-full flex flex-col gap-5  text-white">
-                <div className="text-md text-neutral-400">{item.desc}</div>
+                <div className="text-md text-neutral-400">
+                  {item.desc}
+                </div>
                 <div className="w-full flex justify-start">
-                  <Image src={item.icon} alt="icon" width={128} height={40} />
+                  <Image
+                    src={item.icon}
+                    alt="icon"
+                    width={128}
+                    height={40}
+                  />
                 </div>
               </div>
             </div>

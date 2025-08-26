@@ -24,14 +24,14 @@ const TrustedBySection = () => {
               Trusted Voices
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              Here’s what people say about working with me — across projects,
-              teams, and timelines.
+              Here’s what people say about working with me — across
+              projects, teams, and timelines.
             </div>
           </div>
         </div>
         <div className=" p-3 md:p-6 w-full">
           <div className="flex flex-col md:flex-row text-white w-full h-full gap-5  ">
-            <div className="relative max-w-[448px] ">
+            <div className="relative w-full md:max-w-[448px] ">
               <div className=" absolute -z-10 w-full h-full  ">
                 <div
                   className="absolute -z-10 w-full h-full
@@ -69,15 +69,24 @@ const TrustedBySection = () => {
                   <div className="flex flex-col gap-4 w-full">
                     <div className="flex flex-row items-start">
                       <Image
-                        src={testimony1?.icon ?? '/icons/icon-avatar1.svg'}
+                        src={
+                          testimony1?.icon ??
+                          '/icons/icon-avatar1.svg'
+                        }
                         alt="avatar-icon"
                         width={48}
                         height={48}
                       />
                     </div>
                     <div>
-                      <div className="h-[30px]"> {testimony1?.name}</div>
-                      <div className="h-[30px]"> {testimony1?.role}</div>
+                      <div className="h-[30px]">
+                        {' '}
+                        {testimony1?.name}
+                      </div>
+                      <div className="h-[30px]">
+                        {' '}
+                        {testimony1?.role}
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-end">
@@ -105,15 +114,17 @@ const TrustedBySection = () => {
                       </div>
                       <div>
                         <div className="flex flex-row gap">
-                          {Array.from({ length: rating2 }).map((_, i) => (
-                            <Image
-                              key={i}
-                              src="/icons/icon-star.svg"
-                              alt="star"
-                              width={24}
-                              height={24}
-                            />
-                          ))}
+                          {Array.from({ length: rating2 }).map(
+                            (_, i) => (
+                              <Image
+                                key={i}
+                                src="/icons/icon-star.svg"
+                                alt="star"
+                                width={24}
+                                height={24}
+                              />
+                            )
+                          )}
                         </div>
                       </div>
                       <div className="text-md text-neutral-400">
@@ -126,15 +137,24 @@ const TrustedBySection = () => {
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-row items-start">
                         <Image
-                          src={testimony2?.icon ?? '/icons/icon-avatar1.svg'}
+                          src={
+                            testimony2?.icon ??
+                            '/icons/icon-avatar1.svg'
+                          }
                           alt="avatar-icon"
                           width={48}
                           height={48}
                         />
                       </div>
                       <div>
-                        <div className="h-[30px]"> {testimony2?.name}</div>
-                        <div className="h-[30px]"> {testimony2?.role}</div>
+                        <div className="h-[30px]">
+                          {' '}
+                          {testimony2?.name}
+                        </div>
+                        <div className="h-[30px]">
+                          {' '}
+                          {testimony2?.role}
+                        </div>
                       </div>
                     </div>
                     <div className="flex items-end">
@@ -154,15 +174,17 @@ const TrustedBySection = () => {
                     <div className="flex flex-col justify-start items-start  mb-11 gap-3">
                       <div>
                         <div className="flex flex-row gap">
-                          {Array.from({ length: rating3 }).map((_, i) => (
-                            <Image
-                              key={i}
-                              src="/icons/icon-star.svg"
-                              alt="star"
-                              width={24}
-                              height={24}
-                            />
-                          ))}
+                          {Array.from({ length: rating3 }).map(
+                            (_, i) => (
+                              <Image
+                                key={i}
+                                src="/icons/icon-star.svg"
+                                alt="star"
+                                width={24}
+                                height={24}
+                              />
+                            )
+                          )}
                         </div>
                       </div>
                       <div className="text-md text-neutral-400">
@@ -174,15 +196,24 @@ const TrustedBySection = () => {
                       <div className="flex flex-col gap-4">
                         <div className="flex flex-row items-start">
                           <Image
-                            src={testimony3?.icon ?? '/icons/icon-avatar1.svg'}
+                            src={
+                              testimony3?.icon ??
+                              '/icons/icon-avatar1.svg'
+                            }
                             alt="avatar-icon"
                             width={48}
                             height={48}
                           />
                         </div>
                         <div>
-                          <div className="h-[30px]"> {testimony3?.name}</div>
-                          <div className="h-[30px]"> {testimony3?.role}</div>
+                          <div className="h-[30px]">
+                            {' '}
+                            {testimony3?.name}
+                          </div>
+                          <div className="h-[30px]">
+                            {' '}
+                            {testimony3?.role}
+                          </div>
                         </div>
                       </div>
                       <div className="flex items-end">
@@ -200,15 +231,17 @@ const TrustedBySection = () => {
                     <div className="flex flex-col justify-start items-start mb-11 gap-3">
                       <div>
                         <div className="flex flex-row gap">
-                          {Array.from({ length: rating4 }).map((_, i) => (
-                            <Image
-                              key={i}
-                              src="/icons/icon-star.svg"
-                              alt="star"
-                              width={24}
-                              height={24}
-                            />
-                          ))}
+                          {Array.from({ length: rating4 }).map(
+                            (_, i) => (
+                              <Image
+                                key={i}
+                                src="/icons/icon-star.svg"
+                                alt="star"
+                                width={24}
+                                height={24}
+                              />
+                            )
+                          )}
                         </div>
                       </div>
                       <div className="text-md text-neutral-400">
@@ -220,15 +253,24 @@ const TrustedBySection = () => {
                       <div className="flex flex-col gap-4">
                         <div className="flex flex-row items-start">
                           <Image
-                            src={testimony4?.icon ?? '/icons/icon-avatar1.svg'}
+                            src={
+                              testimony4?.icon ??
+                              '/icons/icon-avatar1.svg'
+                            }
                             alt="avatar-icon"
                             width={48}
                             height={48}
                           />
                         </div>
                         <div>
-                          <div className="h-[30px]"> {testimony4?.name}</div>
-                          <div className="h-[30px]"> {testimony4?.role}</div>
+                          <div className="h-[30px]">
+                            {' '}
+                            {testimony4?.name}
+                          </div>
+                          <div className="h-[30px]">
+                            {' '}
+                            {testimony4?.role}
+                          </div>
                         </div>
                       </div>
                       <div className="flex items-end">

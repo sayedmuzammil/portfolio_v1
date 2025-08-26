@@ -11,11 +11,11 @@ const HighlightsSection = () => {
       <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 mb-6 md:mb-12  pb-6 md:pb-12 border-b border-neutral-800 w-full h-full ">
         {/* atas */}
         <div className="text-white text-display-md md:text-display-xl font-bold max-w-[756px]">
-          I turn ideas and designs into functional, accessible, and performant
-          websites{' '}
+          I turn ideas and designs into functional, accessible, and
+          performant websites{' '}
           <span className="text-primary">
             using modern frontend technologies
-          </span>{' '}
+          </span>
           .
         </div>
         <div className="flex flex-col md:min-h-[150px] justify-between items-start ">
@@ -64,7 +64,7 @@ const HighlightsSection = () => {
             alt="photo-highlight"
             width={453}
             height={513}
-            className=""
+            className="w-full md:w-1/2 object-fit-cover"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 divide-y-2 md:divide-y-0 divide-neutral-800">
             {/* HighlightsSection */}
@@ -91,7 +91,9 @@ const HighlightsSection = () => {
                   <div className="text-xl font-bold text-white">
                     {item.title}
                   </div>
-                  <div className="text-md text-neutral-400">{item.desc}</div>
+                  <div className="text-md text-neutral-400">
+                    {item.desc}
+                  </div>
                 </motion.div>
               </div>
             ))}
