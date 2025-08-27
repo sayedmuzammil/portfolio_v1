@@ -8,17 +8,13 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from '@/components/ui/carousel';
 import { motion } from 'motion/react';
 
 const QuestionsSection2 = () => {
   const [activeCard, setActivCard] = React.useState(0);
-  const [expandedIdx, setExpandedIdx] = React.useState<number | null>(
-    null
-  );
+  const [expandedIdx, setExpandedIdx] = React.useState<number | null>(null);
   const [api, setApi] = React.useState<CarouselApi | null>(null);
   const [canPrev, setCanPrev] = React.useState(false);
   const [canNext, setCanNext] = React.useState(true);
@@ -74,8 +70,8 @@ const QuestionsSection2 = () => {
                 Still Got Questions?
               </div>
               <div className="tex-sm md:text-md text-neutral-400">
-                I’ve listed answers to questions I often get as a
-                frontend developer.
+                I’ve listed answers to questions I often get as a frontend
+                developer.
               </div>
             </div>
 
@@ -177,11 +173,7 @@ const QuestionsSection2 = () => {
                       className={`group relative min-h-[356px] md:h-[466px] w-full border-2 border-neutral-900 p-6 rounded-2xl transition-colors duration-500 cursor-pointer
 
                       /* Mobile: background when open, transparent when closed */
-                      ${
-                        expanded
-                          ? 'bg-question-background'
-                          : 'bg-transparent'
-                      }
+                      ${expanded ? 'bg-question-background' : 'bg-transparent'}
 
                       /* Desktop: ignore mobile bg; use hover to show background */
                       md:bg-transparent md:hover:bg-question-background

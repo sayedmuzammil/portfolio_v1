@@ -1,21 +1,12 @@
 'use client';
 
 import * as React from 'react';
-// import { toast } from 'sonner';
+import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-// import { ErrorDialog } from '@/components/ui/ErrorDialog';
-// import { SuccessDialog } from '@/components/ui/SuccessDialog';
-
-const services = [
-  { id: 'web', label: 'Web Development' },
-  { id: 'mobile', label: 'Mobile App Development' },
-  { id: 'uiux', label: 'UI/UX Design' },
-  { id: 'cloud', label: 'Cloud Solutions' },
-  { id: 'soft', label: 'Software Development' },
-  { id: 'other', label: 'Other' },
-];
+import { ErrorDialog } from '@/components/ui/ErrorDialog';
+import { SuccessDialog } from '@/components/ui/SuccessDialog';
 
 export default function ContactUsSection() {
   const [successOpen, setSuccessOpen] = React.useState(false);
@@ -33,7 +24,6 @@ export default function ContactUsSection() {
       name: String(fd.get('name') || ''),
       email: String(fd.get('email') || ''),
       message: String(fd.get('message') || ''),
-      services: fd.getAll('services').map(String),
     };
 
     try {
@@ -42,26 +32,30 @@ export default function ContactUsSection() {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error(await res.text());
 
-      // ✅ sukses
+      if (!res.ok) {
+        const { error } = await res
+          .json()
+          .catch(() => ({ error: 'Send failed' }));
+        throw new Error(error);
+      }
+
       setSuccessOpen(true);
       form.reset();
-
       toast.success('Message sent', {
         description: 'Thanks! We’ll be in touch shortly.',
       });
     } catch (err: any) {
-      // ❌ gagal
+      console.error(err?.message || err);
       setErrorOpen(true);
       toast.error('Send failed', {
-        description: 'We couldn’t send your message. Please try again.',
+        description:
+          err?.message || 'We couldn’t send your message. Please try again.',
         action: {
           label: 'Retry',
           onClick: () => formRef.current?.requestSubmit(),
         },
       });
-      console.error(err?.message || err);
     } finally {
       setLoading(false);
     }
@@ -176,30 +170,15 @@ export default function ContactUsSection() {
       </div>
 
       {/* Portals */}
-      {/* <SuccessDialog open={successOpen} onOpenChange={setSuccessOpen} />
+      <SuccessDialog open={successOpen} onOpenChange={setSuccessOpen} />
       <ErrorDialog
         open={errorOpen}
         onOpenChange={setErrorOpen}
         onRetry={() => formRef.current?.requestSubmit()}
-      /> */}
+      />
     </section>
   );
 }
-
-/* ---------- subcomponents ---------- */
-
-// function FormHeader() {
-//   return (
-//     <header className="text-center">
-//       <h2 className="text-display-sm md:text-display-lg font-semibold">
-//         Ready to Start? Let’s Talk.
-//       </h2>
-//       <p className="mt-2 text-sm md:text-base text-white/70">
-//         Tell us what you need, and we’ll get back to you soon.
-//       </p>
-//     </header>
-//   );
-// }
 
 const ContactForm = React.forwardRef<
   HTMLFormElement,
@@ -217,7 +196,8 @@ const ContactForm = React.forwardRef<
           name="name"
           required
           placeholder="Enter your name"
-          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2 text-neutral-600"
+          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2 text-neutral-600 focus:bg-white   [&:not(:placeholder-shown)]:bg-white
+focus:text-black [:not(:placeholder-shown)]-text-black"
         />
       </div>
 
@@ -232,7 +212,8 @@ const ContactForm = React.forwardRef<
           type="email"
           required
           placeholder="Enter your email"
-          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2 text-neutral-600"
+          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2 text-neutral-600 focus:bg-white   [&:not(:placeholder-shown)]:bg-white
+focus:text-black [:not(:placeholder-shown)]-text-black"
         />
       </div>
 
@@ -247,7 +228,8 @@ const ContactForm = React.forwardRef<
           rows={6}
           required
           placeholder="Enter your message"
-          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2 text-neutral-600"
+          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2 text-neutral-600 focus:bg-white   [&:not(:placeholder-shown)]:bg-white
+focus:text-black [:not(:placeholder-shown)]-text-black"
         />
       </div>
 
