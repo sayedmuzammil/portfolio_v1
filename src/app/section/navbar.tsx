@@ -1,9 +1,11 @@
-'use client';
-
-import * as React from 'react';
+import React from 'react';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+import {
+  navigationData,
+  type NavigationDataProps,
+} from '../../../data/navigation-data';
+
 import {
   Sheet,
   SheetClose,
@@ -12,70 +14,57 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import {
-  navigationData,
-  type NavigationDataProps,
-} from '../../../data/navigation-data';
+import Image from 'next/image';
 
-const MIN = 56; // px
-const MAX = 72; // px
-
-export default function Navbar() {
+const Navbar = () => {
   const name = 'Edwin';
-  const [expanded, setExpanded] = React.useState(false);
-
-  React.useEffect(() => {
-    const onScroll = () => setExpanded((window.scrollY || 0) > 8);
-    onScroll(); // set initial state on mount
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const height = expanded ? MAX : MIN;
 
   return (
-    <header
-      className="sticky top-0 inset-x-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-black/20"
-      style={{ height, transition: 'height 250ms ease' }}
-    >
-      <div className="h-full flex items-center justify-end md:justify-center">
-        {/* Desktop */}
-        <nav className="hidden md:block w-full">
-          <ul className="h-full mx-auto flex items-center gap-6 justify-center px-4 rounded-full bg-black/40">
-            {navigationData.map((item: NavigationDataProps) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="text-white hover:text-gray-300 transition-colors"
-                >
-                  {item.label}
-                </Link>
+    <header className="sticky top-0 inset-x-0 z-50 bg-transparent">
+      <div className="flex justify-end md:justify-center md:items-center top-0  ">
+        <div className="hidden md:block ">
+          {/* Desktop nav */}
+          <nav className="hidden md:block pt-5">
+            <ul className="flex items-center gap-6 justify-center px-4 h-11 rounded-2xl bg-black/40 backdrop-blur-md">
+              <li className="text-white not-visited:text-xl font-bold">
+                {name}
               </li>
-            ))}
-          </ul>
-        </nav>
+              {navigationData.map((item: NavigationDataProps) => (
+                <li key={item.label} className="inline-block">
+                  <Link
+                    href={item.href}
+                    className="text-white hover:text-gray-300 transition-colors cursor-pointer"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
 
-        {/* Mobile */}
-        <div className="md:hidden w-full px-2">
-          <div className="h-full flex items-center justify-between rounded-full bg-black/40 text-white px-4">
-            <div className="text-xl font-bold">{name}</div>
+        {/* Mobile sheet */}
+        <div className="flex items-center justify-between md:hidden h-12 rounded-full bg-black/40 backdrop-blur-md text-white w-full m-2 md:m-8 px-4 z-10 md:z-0">
+          <div className="text-xl font-bold">{name}</div>
+          <div className=" rounded-full bg-transparent flex items-center justify-between md:hidden">
             <Sheet>
               <SheetTrigger asChild>
                 <button
                   type="button"
                   aria-label="Open main menu"
-                  className="p-2 text-white"
+                  className="p-2 text-white "
                 >
                   <Menu className="w-6 h-6" />
                 </button>
               </SheetTrigger>
+
               <SheetContent
                 side="right"
                 className="text-white bg-black/50 backdrop-blur-lg p-4"
               >
                 <SheetHeader>
                   <SheetTitle asChild>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-row items-center gap-2">
                       <div className="rounded-full w-[40px] h-[40px] bg-photo-background overflow-hidden">
                         <Image
                           src="/images/image-avatar-profile.svg"
@@ -84,10 +73,11 @@ export default function Navbar() {
                           height={40}
                         />
                       </div>
-                      <div className="text-white">{name}</div>
+                      <div className=" text-white">{name} </div>
                     </div>
                   </SheetTitle>
                 </SheetHeader>
+
                 <nav className="mt-2">
                   <ul>
                     {navigationData.map((item: NavigationDataProps) => (
@@ -111,4 +101,6 @@ export default function Navbar() {
       </div>
     </header>
   );
-}
+};
+
+export default Navbar;
