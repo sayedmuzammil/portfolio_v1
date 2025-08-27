@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const CapabilitiesSection = () => {
   return (
-    <section className="w-full mt-20 md:mt-0">
+    <div className="w-full mt-20 md:mt-0">
       <div className="relative h-15.5 md:h-[108px] overflow-hidden bg-primary">
         <motion.ul
           className="flex items-center gap-3.5 whitespace-nowrap w-max h-full"
@@ -16,7 +16,7 @@ const CapabilitiesSection = () => {
           transition={{ duration: 20, ease: 'linear', repeat: Infinity }}
           // aria-label="Capabilities"
         >
-          {CapabilitiesData.map((item, index) => (
+          {CapabilitiesData.map((item) => (
             <li
               key={`${item.capability}`}
               className="flex items-center justify-center"
@@ -35,7 +35,7 @@ const CapabilitiesSection = () => {
           ))}
         </motion.ul>
       </div>
-    </section>
+    </div>
   );
 };
 

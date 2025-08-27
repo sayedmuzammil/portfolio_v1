@@ -45,12 +45,17 @@ export default function ContactUsSection() {
       toast.success('Message sent', {
         description: 'Thanks! We’ll be in touch shortly.',
       });
-    } catch (err: any) {
-      console.error(err?.message || err);
+    } catch (err: unknown) {
+      console.error(
+        'Contact route error:',
+        err instanceof Error ? err.message : 'Unknown error'
+      );
+
       setErrorOpen(true);
       toast.error('Send failed', {
         description:
-          err?.message || 'We couldn’t send your message. Please try again.',
+          (err as Error)?.message ||
+          'We couldn’t send your message. Please try again.',
         action: {
           label: 'Retry',
           onClick: () => formRef.current?.requestSubmit(),
@@ -196,7 +201,7 @@ const ContactForm = React.forwardRef<
           name="name"
           required
           placeholder="Enter your name"
-          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2 text-neutral-600 focus:bg-white   [&:not(:placeholder-shown)]:bg-white
+          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2  focus:bg-white   [&:not(:placeholder-shown)]:bg-white
 focus:text-black [:not(:placeholder-shown)]-text-black"
         />
       </div>
@@ -212,7 +217,7 @@ focus:text-black [:not(:placeholder-shown)]-text-black"
           type="email"
           required
           placeholder="Enter your email"
-          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2 text-neutral-600 focus:bg-white   [&:not(:placeholder-shown)]:bg-white
+          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2  focus:bg-white   [&:not(:placeholder-shown)]:bg-white
 focus:text-black [:not(:placeholder-shown)]-text-black"
         />
       </div>
@@ -228,7 +233,7 @@ focus:text-black [:not(:placeholder-shown)]-text-black"
           rows={6}
           required
           placeholder="Enter your message"
-          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2 text-neutral-600 focus:bg-white   [&:not(:placeholder-shown)]:bg-white
+          className="w-full rounded-md border border-white/15 bg-transparent px-3 py-2  focus:bg-white   [&:not(:placeholder-shown)]:bg-white
 focus:text-black [:not(:placeholder-shown)]-text-black"
         />
       </div>

@@ -1,4 +1,4 @@
-type HighlightsProps = {
+export type HighlightsProps = {
   id: number;
   icon: string;
   title: string;

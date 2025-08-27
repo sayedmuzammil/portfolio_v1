@@ -1,7 +1,10 @@
 import React from 'react';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
-import { navigationData } from '../../../data/navigation-data';
+import {
+  navigationData,
+  type NavigationDataProps,
+} from '../../../data/navigation-data';
 
 import {
   Sheet,
@@ -21,7 +24,7 @@ const Navbar = () => {
         {/* Desktop nav */}
         <nav className="hidden md:block">
           <ul className="flex items-center gap-6 justify-center px-4 h-11 rounded-full bg-black/40 backdrop-blur-md">
-            {navigationData.map((item: any) => (
+            {navigationData.map((item: NavigationDataProps) => (
               <li key={item.label} className="inline-block">
                 <Link
                   href={item.href}
@@ -62,7 +65,7 @@ const Navbar = () => {
 
               <nav className="mt-2">
                 <ul>
-                  {navigationData.map((item: any) => (
+                  {navigationData.map((item: NavigationDataProps) => (
                     <li key={item.label} className="flex flex-col">
                       <SheetClose asChild>
                         <Link

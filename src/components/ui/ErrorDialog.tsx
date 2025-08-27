@@ -65,7 +65,7 @@ export function ErrorDialog({ open, onOpenChange, onRetry }: Props) {
           </DialogTitle>
 
           <p className="mx-auto max-w-sm text-center text-md text-neutral-400">
-            Something broke along the way. Let's try resending it.
+            Something broke along the way. Let`&lsquo;s try resending it.
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-type ToolsProps = {
+export type ToolsProps = {
   id: number;
   label: string;
   icon: string;

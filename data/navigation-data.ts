@@ -1,4 +1,4 @@
-type NavigationDataProps = {
+export type NavigationDataProps = {
   label: string;
   href: string;
 };

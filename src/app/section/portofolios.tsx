@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
-import { PortofoliosData } from '../../../data/portofolio-data';
+import {
+  PortofoliosData,
+  type PortofolioProps,
+} from '../../../data/portofolio-data';
 
 const PortofoliosSection = () => {
   return (
@@ -14,14 +17,14 @@ const PortofoliosSection = () => {
               Bridging Design and Development
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              These are real projects where I implemented frontend
-              interfaces with precision and attention to detail.
+              These are real projects where I implemented frontend interfaces
+              with precision and attention to detail.
             </div>
           </div>
         </div>
         <div className=" p-3 md:p-6 ">
           <div className="flex flex-col md:flex-row gap-5">
-            {PortofoliosData.map((item: any) => (
+            {PortofoliosData.map((item: PortofolioProps) => (
               <div key={item.id} className="flex flex-col gap-4">
                 <div>
                   <Image

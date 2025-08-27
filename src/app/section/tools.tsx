@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Mail } from 'lucide-react';
 import React from 'react';
-import { ToolsData } from '../../../data/tools-data';
+import { ToolsData, type ToolsProps } from '../../../data/tools-data';
 import Image from 'next/image';
 
 const ToolsSection = () => {
@@ -15,8 +15,8 @@ const ToolsSection = () => {
               Tools I Use to Build
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              From code to design — here’s the tech that helps me turn
-              ideas into real products.
+              From code to design — here’s the tech that helps me turn ideas
+              into real products.
             </div>
           </div>
           <Button
@@ -30,7 +30,7 @@ const ToolsSection = () => {
         <div className="w-full md:w-[642px] mt-6 md:mt-0 h-full ">
           {/* kanan */}
           <ul className="flex flex-col text-md md:text-xl text-white ">
-            {ToolsData.map((item: any) => (
+            {ToolsData.map((item: ToolsProps) => (
               <li
                 key={item.id}
                 className="flex flex-row justify-between items-center h-15 mb-4 first:border-b-2 first:border-neutral-900 border-b-2 border-neutral-900 last:border-b-0"

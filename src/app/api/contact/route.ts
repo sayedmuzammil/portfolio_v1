@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     // 1) Send to YOU (inbox)
     const toYou = await resend.emails.send({
       from: 'onboarding@resend.dev', // replace with your verified sender in prod
-      to: process.env.CONTACT_RECIPIENT ?? 'smuzammil87@gmail.com',
+      to: process.env.CONTACT_RECIPIENT || '',
       subject: `New contact from ${data.name}`,
       replyTo: data.email, // so you can reply directly
       html: `
@@ -72,8 +72,11 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ ok: true });
-  } catch (err: any) {
-    console.error('Contact route error:', err?.message || err);
+  } catch (err: unknown) {
+    console.error(
+      'Contact route error:',
+      err instanceof Error ? err.message : 'Unknown error'
+    );
     return NextResponse.json(
       { error: 'Internal Server Error' },
       { status: 500 }

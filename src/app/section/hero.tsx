@@ -26,7 +26,7 @@ const HeroSection = () => {
           {/* left side */}
           <div className="  text-white flex flex-col justify-center gap-8 items-start">
             <div className="text-md md:text-xl text-neutral-25">
-              Hello, I'm Edwin Anderson
+              Hello, I`&lsquo;`m Edwin Anderson
             </div>
             <div className="font-bold text-6xl md:text-8xl tracking-tight">
               <p>

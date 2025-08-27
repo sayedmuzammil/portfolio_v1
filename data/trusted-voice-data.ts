@@ -1,4 +1,4 @@
-type TrustedVoiceProps = {
+export type TrustedVoiceProps = {
   id: number;
   highlight?: string;
   title?: string;

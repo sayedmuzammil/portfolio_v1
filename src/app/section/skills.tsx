@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 import { SkillsData } from '../../../data/skills-data';
-import { Badge } from 'lucide-react';
 
 const SkillsSection = () => {
   return (

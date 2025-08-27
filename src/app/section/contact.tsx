@@ -1,19 +1,10 @@
 'use client';
 
-import {
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
 import React from 'react';
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
 
 const ContactSection = () => {
-  const form = useForm();
+  // const form = useForm();
 
   return (
     <section className="mx-3 md:mx-30 py-10 md:py-20">
@@ -34,23 +25,6 @@ const ContactSection = () => {
               <div>name</div>
               <div>email</div>
               <div>message</div>
-
-              <div>
-                {/* <FormField
-                  control={form.control}
-                  name="username"
-                  render={({}) => (
-                    <FormItem>
-                      <FormLabel>Username</FormLabel>
-                      <FormControl></FormControl>
-                      <FormDescription>
-                        This is your public display name.
-                      </FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                /> */}
-              </div>
             </form>
           </div>
         </div>

@@ -1,4 +1,4 @@
-type PortofolioProps = {
+export type PortofolioProps = {
   id: number;
   image: string;
   title: string;
