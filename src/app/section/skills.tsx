@@ -4,7 +4,7 @@ import { SkillsData } from '../../../data/skills-data';
 
 const SkillsSection = () => {
   return (
-    <section className="relative w-full py-10 md:py-20 ">
+    <section id="skills" className="relative w-full py-10 md:py-20 ">
       {/* background */}
       <div className=" absolute -z-10 w-full h-full -translate-y-[40px] md:-translate-y-[80px]">
         <div

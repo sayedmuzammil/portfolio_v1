@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { CapabilitiesData } from '../../../data/capabilities-data';
 import Image from 'next/image';
 import { Marquee } from '@/components/ui/marquee';

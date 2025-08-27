@@ -7,7 +7,7 @@ import {
 
 const PortfoliosSection = () => {
   return (
-    <section className="relative w-full my-10 md:my-20">
+    <section id="projects" className="relative w-full my-10 md:my-20">
       {/* background */}
 
       <div className=" w-full h-full px-4 md:px-35  ">
