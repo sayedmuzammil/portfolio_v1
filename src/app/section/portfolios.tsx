@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
 import {
-  PortofoliosData,
-  type PortofolioProps,
-} from '../../../data/portofolio-data';
+  PortfoliosData,
+  type PortfolioProps,
+} from '../../../data/portfolio-data';
 
-const PortofoliosSection = () => {
+const PortfoliosSection = () => {
   return (
     <section className="relative w-full my-10 md:my-20">
       {/* background */}
@@ -24,7 +24,7 @@ const PortofoliosSection = () => {
         </div>
         <div className=" p-3 md:p-6 ">
           <div className="flex flex-col md:flex-row gap-5">
-            {PortofoliosData.map((item: PortofolioProps) => (
+            {PortfoliosData.map((item: PortfolioProps) => (
               <div key={item.id} className="flex flex-col gap-4">
                 <div>
                   <Image
@@ -52,4 +52,4 @@ const PortofoliosSection = () => {
   );
 };
 
-export default PortofoliosSection;
+export default PortfoliosSection;

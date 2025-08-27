@@ -39,7 +39,7 @@ export const ToolsData: ToolsProps[] = [
   {
     id: 6,
     label: 'Mongo DB',
-    icon: '/icons/icon-mongodb.svg',
+    icon: '/icons/icon-mongoDB.svg',
     score: 75,
   },
 ];

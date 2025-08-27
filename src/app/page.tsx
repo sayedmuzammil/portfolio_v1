@@ -4,7 +4,7 @@ import CapabilitiesSection from './section/capabilities';
 import HighlightsSection from './section/highlights';
 import ToolsSection from './section/tools';
 import SkillsSection from './section/skills';
-import PortofoliosSection from './section/portofolios';
+import PortofoliosSection from './section/portfolios';
 import JourneySection from './section/journey';
 import TrustedBySection from './section/trusted-by';
 import ContactUsSection from './section/testcontact';
