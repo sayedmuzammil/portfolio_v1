@@ -4,11 +4,7 @@ import { SkillsData } from '../../../data/skills-data';
 
 const SkillsSection = () => {
   return (
-<<<<<<< HEAD
-    <section className="relative w-full py-10 md:py-20 bg-black -z-50 ">
-=======
     <section id="skills" className="relative w-full py-10 md:py-20 ">
->>>>>>> b52aca2d1eb127fa4df89eb2f4f14d110856efc7
       {/* background */}
       <div className=" absolute -z-10 w-full h-full -translate-y-[40px] md:-translate-y-[80px]">
         <div
@@ -31,8 +27,8 @@ const SkillsSection = () => {
               Not Your Typical Frontend Developer
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              I care about how it looks, how it works, and how it
-              feels — all at once.
+              I care about how it looks, how it works, and how it feels — all at
+              once.
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/carousel';
 import { motion } from 'motion/react';
 
-const FaqSection = () => {
+const QuestionsSection2 = () => {
   const [activeCard, setActivCard] = React.useState(0);
   const [expandedIdx, setExpandedIdx] = React.useState<number | null>(null);
   const [api, setApi] = React.useState<CarouselApi | null>(null);
@@ -60,10 +60,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section
-      id="faq"
-      className="relative w-full py-10 md:py-20 flex flex-col gap-12 px-4 md:px-35"
-    >
+    <section className="relative w-full py-10 md:py-20 flex flex-col gap-12 px-4 md:px-35">
       <div className="w-full h-full">
         {/* Header + controls */}
         <div className="flex w-full justify-start mb-10 md:mb-13">
@@ -235,4 +232,4 @@ const FaqSection = () => {
   );
 };
 
-export default FaqSection;
+export default QuestionsSection2;

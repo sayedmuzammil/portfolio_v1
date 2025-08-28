@@ -7,11 +7,7 @@ import {
 
 const PortfoliosSection = () => {
   return (
-<<<<<<< HEAD:src/app/section/portofolios.tsx
-    <section className="relative w-full py-10 md:py-20 bg-black -z-50">
-=======
     <section id="projects" className="relative w-full my-10 md:my-20">
->>>>>>> b52aca2d1eb127fa4df89eb2f4f14d110856efc7:src/app/section/portfolios.tsx
       {/* background */}
 
       <div className=" w-full h-full px-4 md:px-35  ">

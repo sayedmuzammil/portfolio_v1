@@ -7,14 +7,14 @@ import SkillsSection from './section/skills';
 import PortofoliosSection from './section/portfolios';
 import JourneySection from './section/journey';
 import TrustedBySection from './section/trusted-by';
-import ContactUsSection from './section/contact';
-import QuestionsSection2 from './section/faq';
+import ContactUsSection from './section/testcontact';
+import QuestionsSection2 from './section/questions2';
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className=" custom-container  min-h-screen ">
+        <Navbar />
         <HeroSection />
         <CapabilitiesSection />
         <HighlightsSection />
