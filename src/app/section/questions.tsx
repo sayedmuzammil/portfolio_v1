@@ -2,9 +2,8 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { journeyData } from '../../../data/journey-data';
 import { Button } from '@/components/ui/button';
-import { QuestionList } from '../../../data/questions-data';
+import { QuestionList, type QuestionProps } from '../../../data/questions-data';
 import { motion, Transition, useReducedMotion } from 'motion/react';
 
 const QuestionsSection = () => {
@@ -94,7 +93,7 @@ const QuestionsSection = () => {
               animate={{ x: -activeCard * 268 }}
               transition={trackTransition}
             >
-              {QuestionList.map((item: any) => {
+              {QuestionList.map((item: QuestionProps) => {
                 const isOpen = openId === item.id;
                 return (
                   <div

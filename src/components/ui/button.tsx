@@ -20,6 +20,18 @@ const buttonVariants = cva(
         ghost:
           'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
+        flood: [
+          // base
+          'relative isolate overflow-hidden shadow-xs group',
+          // colors (also change text color on hover)
+          'bg-primary text-primary-foreground hover:bg-neutral-950 hover:text-neutral-900',
+          // overlay under content
+          "before:content-[''] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2",
+          'before:h-0 before:w-0 before:rounded-md before:bg-white before:transition-all before:duration-300 before:z-0',
+          'hover:before:h-full hover:before:w-full',
+          // ensure typical children stay above overlay
+          '[&_span]:relative [&_span]:z-10 [&_svg]:relative [&_svg]:z-10',
+        ].join(' '),
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',

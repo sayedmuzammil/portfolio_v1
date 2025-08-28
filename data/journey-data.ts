@@ -1,4 +1,4 @@
-type journeyProps = {
+export type JourneyProps = {
   id: number;
   role: string;
   durationStart: string;
@@ -7,7 +7,7 @@ type journeyProps = {
   icon: string;
 };
 
-export const journeyData: journeyProps[] = [
+export const JourneyData: JourneyProps[] = [
   {
     id: 1,
     role: 'Frontend Developer',

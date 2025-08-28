@@ -4,19 +4,17 @@ import CapabilitiesSection from './section/capabilities';
 import HighlightsSection from './section/highlights';
 import ToolsSection from './section/tools';
 import SkillsSection from './section/skills';
-import PortofoliosSection from './section/portofolios';
+import PortofoliosSection from './section/portfolios';
 import JourneySection from './section/journey';
 import TrustedBySection from './section/trusted-by';
-import QuestionsSection from './section/questions';
-import ContactSection from './section/contact';
-import ContactUsSection from './section/testcontact';
-import QuestionsSection2 from './section/questions2';
+import ContactUsSection from './section/contact';
+import QuestionsSection2 from './section/faq';
 
 export default function Home() {
   return (
     <>
-      <div className=" custom-container    ">
-        <Navbar />
+      <Navbar />
+      <div className=" custom-container  min-h-screen ">
         <HeroSection />
         <CapabilitiesSection />
         <HighlightsSection />
@@ -25,10 +23,7 @@ export default function Home() {
         <PortofoliosSection />
         <JourneySection />
         <TrustedBySection />
-        {/* <QuestionsSection /> */}
         <QuestionsSection2 />
-
-        {/* <ContactSection /> */}
         <ContactUsSection />
       </div>
     </>

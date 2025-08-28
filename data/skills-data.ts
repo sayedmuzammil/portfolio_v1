@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface SkillsProps {
+export type SkillsProps = {
   id: number;
   skill: string;
   withMe: boolean;
   others: boolean;
-}
+};
 
 export const SkillsData: SkillsProps[] = [
   {

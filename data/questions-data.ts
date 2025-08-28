@@ -1,4 +1,4 @@
-type QuestionProps = {
+export type QuestionProps = {
   id: number;
   question: string;
   answer: string;

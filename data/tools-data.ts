@@ -1,4 +1,4 @@
-type ToolsProps = {
+export type ToolsProps = {
   id: number;
   label: string;
   icon: string;
@@ -39,7 +39,7 @@ export const ToolsData: ToolsProps[] = [
   {
     id: 6,
     label: 'Mongo DB',
-    icon: '/icons/icon-mongodb.svg',
+    icon: '/icons/icon-mongoDB.svg',
     score: 75,
   },
 ];

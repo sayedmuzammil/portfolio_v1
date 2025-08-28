@@ -1,4 +1,4 @@
-type SocialMediaProps = {
+export type SocialMediaProps = {
   id: number;
   label: string;
   src: string;

@@ -8,17 +8,13 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from '@/components/ui/carousel';
 import { motion } from 'motion/react';
 
-const QuestionsSection2 = () => {
+const FaqSection = () => {
   const [activeCard, setActivCard] = React.useState(0);
-  const [expandedIdx, setExpandedIdx] = React.useState<number | null>(
-    null
-  );
+  const [expandedIdx, setExpandedIdx] = React.useState<number | null>(null);
   const [api, setApi] = React.useState<CarouselApi | null>(null);
   const [canPrev, setCanPrev] = React.useState(false);
   const [canNext, setCanNext] = React.useState(true);
@@ -64,8 +60,16 @@ const QuestionsSection2 = () => {
   };
 
   return (
+<<<<<<< HEAD:src/app/section/questions2.tsx
     <section className=" w-full h-full py-10 md:py-20  flex flex-col gap-12 px-4 md:px-35 bg-black">
       <div className="w-full h-full ">
+=======
+    <section
+      id="faq"
+      className="relative w-full py-10 md:py-20 flex flex-col gap-12 px-4 md:px-35"
+    >
+      <div className="w-full h-full">
+>>>>>>> b52aca2d1eb127fa4df89eb2f4f14d110856efc7:src/app/section/faq.tsx
         {/* Header + controls */}
         <div className="flex w-full justify-start mb-10 md:mb-13">
           <div className="w-full flex flex-col md:flex-row gap-6">
@@ -74,8 +78,8 @@ const QuestionsSection2 = () => {
                 Still Got Questions?
               </div>
               <div className="tex-sm md:text-md text-neutral-400">
-                I’ve listed answers to questions I often get as a
-                frontend developer.
+                I’ve listed answers to questions I often get as a frontend
+                developer.
               </div>
             </div>
 
@@ -177,11 +181,7 @@ const QuestionsSection2 = () => {
                       className={`group relative min-h-[356px] md:h-[466px] w-full border-2 border-neutral-900 p-6 rounded-2xl transition-colors duration-500 cursor-pointer
 
                       /* Mobile: background when open, transparent when closed */
-                      ${
-                        expanded
-                          ? 'bg-question-background'
-                          : 'bg-transparent'
-                      }
+                      ${expanded ? 'bg-question-background' : 'bg-transparent'}
 
                       /* Desktop: ignore mobile bg; use hover to show background */
                       md:bg-transparent md:hover:bg-question-background
@@ -240,4 +240,4 @@ const QuestionsSection2 = () => {
   );
 };
 
-export default QuestionsSection2;
+export default FaqSection;

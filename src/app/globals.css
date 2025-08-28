@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@config '../../tailwind.config.ts';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -152,6 +153,10 @@
     --color-question-background: var(--primary-400);
     --color-photo-background: var(--primary-300);
         --color-contact-highlight: var(--primary-300);
+            --color-success-background: var(--primary-400);
+            --color-failed-background: var(--destructive);
+
+
 
 
 

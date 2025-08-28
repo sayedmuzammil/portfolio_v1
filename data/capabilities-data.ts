@@ -1,8 +1,8 @@
 import React from 'react';
 
-interface CapabilitiesProps {
+export type CapabilitiesProps = {
   capability: string;
-}
+};
 
 export const CapabilitiesData: CapabilitiesProps[] = [
   {

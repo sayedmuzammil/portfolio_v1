@@ -1,10 +1,17 @@
 import Image from 'next/image';
 import React from 'react';
-import { PortofoliosData } from '../../../data/portofolio-data';
+import {
+  PortfoliosData,
+  type PortfolioProps,
+} from '../../../data/portfolio-data';
 
-const PortofoliosSection = () => {
+const PortfoliosSection = () => {
   return (
+<<<<<<< HEAD:src/app/section/portofolios.tsx
     <section className="relative w-full py-10 md:py-20 bg-black -z-50">
+=======
+    <section id="projects" className="relative w-full my-10 md:my-20">
+>>>>>>> b52aca2d1eb127fa4df89eb2f4f14d110856efc7:src/app/section/portfolios.tsx
       {/* background */}
 
       <div className=" w-full h-full px-4 md:px-35  ">
@@ -14,14 +21,14 @@ const PortofoliosSection = () => {
               Bridging Design and Development
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              These are real projects where I implemented frontend
-              interfaces with precision and attention to detail.
+              These are real projects where I implemented frontend interfaces
+              with precision and attention to detail.
             </div>
           </div>
         </div>
         <div className=" p-3 md:p-6 ">
           <div className="flex flex-col md:flex-row gap-5">
-            {PortofoliosData.map((item: any) => (
+            {PortfoliosData.map((item: PortfolioProps) => (
               <div key={item.id} className="flex flex-col gap-4">
                 <div>
                   <Image
@@ -49,4 +56,4 @@ const PortofoliosSection = () => {
   );
 };
 
-export default PortofoliosSection;
+export default PortfoliosSection;
