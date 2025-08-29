@@ -68,7 +68,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative w-full px-5 md:px-20 ">
+    <section id="contact" className="relative w-full px-5 md:px-20">
       {/* background */}
 
       <motion.div
@@ -93,7 +93,7 @@ export default function ContactSection() {
         />
       </motion.div>
 
-      <div className="flex flex-col md:flex-row justify-between pb-12 w-full">
+      <div className="flex flex-col md:flex-row justify-between pb-12 pt-20 w-full">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
