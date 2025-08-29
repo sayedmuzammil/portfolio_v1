@@ -59,7 +59,7 @@ export function ErrorDialog({ open, onOpenChange, onRetry }: Props) {
           </div>
         </DialogHeader>
 
-        <div className="flex flex-col gap-6 ">
+        <div className="flex flex-col justify-center items-center gap-6 ">
           <DialogTitle className="text-center text-display-xs">
             Message Not Sent
           </DialogTitle>
@@ -71,7 +71,7 @@ export function ErrorDialog({ open, onOpenChange, onRetry }: Props) {
 
         <Button
           variant={'default'}
-          className="h-13 w-full md:w-[257px] text-sm md:text-md font-semibold"
+          className="h-13 w-full mt-6 md:mt-8 text-sm md:text-md font-semibold rounded-full mx-auto"
           onClick={() => (onRetry ? onRetry() : onOpenChange(false))}
         >
           Try Again
