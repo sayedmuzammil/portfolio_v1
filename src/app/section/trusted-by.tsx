@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import { TrustedVoices } from '../../../data/trusted-voice-data';
+import { motion } from 'framer-motion';
 
 const TrustedBySection = () => {
   const testimony1 = TrustedVoices.find((item) => item.id === 1);
@@ -18,20 +21,32 @@ const TrustedBySection = () => {
       {/* background */}
 
       <div className=" w-full h-full px-4 md:px-35  ">
-        <div className="flex w-full justify-center mb-13 ">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.1, delay: 0.1 }}
+          className="flex w-full justify-center mb-13 "
+        >
           <div className="w-full flex flex-col items-center gap-4">
             <div className="text-display-md md:text-display-2xl font-bold text-white">
               Trusted Voices
             </div>
             <div className="tex-sm md:text-md text-neutral-400">
-              Here’s what people say about working with me — across
-              projects, teams, and timelines.
+              Here’s what people say about working with me — across projects,
+              teams, and timelines.
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className=" p-3 md:p-6 w-full">
           <div className="flex flex-col md:flex-row text-white w-full h-full gap-5  ">
-            <div className="relative w-full md:max-w-[448px] ">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+              className="relative w-full md:max-w-[448px] "
+            >
               <div className=" absolute -z-10 w-full h-full  ">
                 <div
                   className="absolute -z-10 w-full h-full
@@ -69,24 +84,15 @@ const TrustedBySection = () => {
                   <div className="flex flex-col gap-4 w-full">
                     <div className="flex flex-row items-start">
                       <Image
-                        src={
-                          testimony1?.icon ??
-                          '/icons/icon-avatar1.svg'
-                        }
+                        src={testimony1?.icon ?? '/icons/icon-avatar1.svg'}
                         alt="avatar-icon"
                         width={48}
                         height={48}
                       />
                     </div>
                     <div>
-                      <div className="h-[30px]">
-                        {' '}
-                        {testimony1?.name}
-                      </div>
-                      <div className="h-[30px]">
-                        {' '}
-                        {testimony1?.role}
-                      </div>
+                      <div className="h-[30px]"> {testimony1?.name}</div>
+                      <div className="h-[30px]"> {testimony1?.role}</div>
                     </div>
                   </div>
                   <div className="flex items-end">
@@ -100,10 +106,16 @@ const TrustedBySection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
             <div className="flex">
               <div className="flex flex-col gap-6">
-                <div className="border-2 border-neutral-900 p-5 ">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="border-2 border-neutral-900 p-5 "
+                >
                   <div className="flex flex-grow flex-basis  mb-11 gap-3 ">
                     <div className="flex flex-col gap-2 justify-start items-start ">
                       <div className="text-display-lg font-bold">
@@ -114,17 +126,15 @@ const TrustedBySection = () => {
                       </div>
                       <div>
                         <div className="flex flex-row gap">
-                          {Array.from({ length: rating2 }).map(
-                            (_, i) => (
-                              <Image
-                                key={i}
-                                src="/icons/icon-star.svg"
-                                alt="star"
-                                width={24}
-                                height={24}
-                              />
-                            )
-                          )}
+                          {Array.from({ length: rating2 }).map((_, i) => (
+                            <Image
+                              key={i}
+                              src="/icons/icon-star.svg"
+                              alt="star"
+                              width={24}
+                              height={24}
+                            />
+                          ))}
                         </div>
                       </div>
                       <div className="text-md text-neutral-400">
@@ -137,24 +147,15 @@ const TrustedBySection = () => {
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-row items-start">
                         <Image
-                          src={
-                            testimony2?.icon ??
-                            '/icons/icon-avatar1.svg'
-                          }
+                          src={testimony2?.icon ?? '/icons/icon-avatar1.svg'}
                           alt="avatar-icon"
                           width={48}
                           height={48}
                         />
                       </div>
                       <div>
-                        <div className="h-[30px]">
-                          {' '}
-                          {testimony2?.name}
-                        </div>
-                        <div className="h-[30px]">
-                          {' '}
-                          {testimony2?.role}
-                        </div>
+                        <div className="h-[30px]"> {testimony2?.name}</div>
+                        <div className="h-[30px]"> {testimony2?.role}</div>
                       </div>
                     </div>
                     <div className="flex items-end">
@@ -167,24 +168,28 @@ const TrustedBySection = () => {
                       />
                     </div>
                   </div>
-                </div>
+                </motion.div>
 
                 <div className="flex flex-col md:flex-row flex-grow flex-basis gap-5 ">
-                  <div className="w-full h-auto border-2 border-neutral-900 p-5 flex flex-col justify-between">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.7 }}
+                    className="w-full h-auto border-2 border-neutral-900 p-5 flex flex-col justify-between"
+                  >
                     <div className="flex flex-col justify-start items-start  mb-11 gap-3">
                       <div>
                         <div className="flex flex-row gap">
-                          {Array.from({ length: rating3 }).map(
-                            (_, i) => (
-                              <Image
-                                key={i}
-                                src="/icons/icon-star.svg"
-                                alt="star"
-                                width={24}
-                                height={24}
-                              />
-                            )
-                          )}
+                          {Array.from({ length: rating3 }).map((_, i) => (
+                            <Image
+                              key={i}
+                              src="/icons/icon-star.svg"
+                              alt="star"
+                              width={24}
+                              height={24}
+                            />
+                          ))}
                         </div>
                       </div>
                       <div className="text-md text-neutral-400">
@@ -196,24 +201,15 @@ const TrustedBySection = () => {
                       <div className="flex flex-col gap-4">
                         <div className="flex flex-row items-start">
                           <Image
-                            src={
-                              testimony3?.icon ??
-                              '/icons/icon-avatar1.svg'
-                            }
+                            src={testimony3?.icon ?? '/icons/icon-avatar1.svg'}
                             alt="avatar-icon"
                             width={48}
                             height={48}
                           />
                         </div>
                         <div>
-                          <div className="h-[30px]">
-                            {' '}
-                            {testimony3?.name}
-                          </div>
-                          <div className="h-[30px]">
-                            {' '}
-                            {testimony3?.role}
-                          </div>
+                          <div className="h-[30px]"> {testimony3?.name}</div>
+                          <div className="h-[30px]"> {testimony3?.role}</div>
                         </div>
                       </div>
                       <div className="flex items-end">
@@ -226,22 +222,26 @@ const TrustedBySection = () => {
                         />
                       </div>
                     </div>
-                  </div>
-                  <div className="w-full h-auto flex-grow flex-basis border-2 border-neutral-900 p-5 flex flex-col justify-between">
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.9, delay: 0.9 }}
+                    className="w-full h-auto flex-grow flex-basis border-2 border-neutral-900 p-5 flex flex-col justify-between"
+                  >
                     <div className="flex flex-col justify-start items-start mb-11 gap-3">
                       <div>
                         <div className="flex flex-row gap">
-                          {Array.from({ length: rating4 }).map(
-                            (_, i) => (
-                              <Image
-                                key={i}
-                                src="/icons/icon-star.svg"
-                                alt="star"
-                                width={24}
-                                height={24}
-                              />
-                            )
-                          )}
+                          {Array.from({ length: rating4 }).map((_, i) => (
+                            <Image
+                              key={i}
+                              src="/icons/icon-star.svg"
+                              alt="star"
+                              width={24}
+                              height={24}
+                            />
+                          ))}
                         </div>
                       </div>
                       <div className="text-md text-neutral-400">
@@ -253,24 +253,15 @@ const TrustedBySection = () => {
                       <div className="flex flex-col gap-4">
                         <div className="flex flex-row items-start">
                           <Image
-                            src={
-                              testimony4?.icon ??
-                              '/icons/icon-avatar1.svg'
-                            }
+                            src={testimony4?.icon ?? '/icons/icon-avatar1.svg'}
                             alt="avatar-icon"
                             width={48}
                             height={48}
                           />
                         </div>
                         <div>
-                          <div className="h-[30px]">
-                            {' '}
-                            {testimony4?.name}
-                          </div>
-                          <div className="h-[30px]">
-                            {' '}
-                            {testimony4?.role}
-                          </div>
+                          <div className="h-[30px]"> {testimony4?.name}</div>
+                          <div className="h-[30px]"> {testimony4?.role}</div>
                         </div>
                       </div>
                       <div className="flex items-end">
@@ -283,7 +274,7 @@ const TrustedBySection = () => {
                         />
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>

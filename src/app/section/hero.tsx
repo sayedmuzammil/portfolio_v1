@@ -1,10 +1,30 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Mail } from 'lucide-react';
 import Link from 'next/link';
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from 'motion/react';
 
 const HeroSection = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  const reduce = useReducedMotion();
+
+  const cardY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -30]); // slowest
+  // const decoY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -60]); // medium
+  // const photoY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -90]); // fastest / front-most
+
   return (
     <section id="about" className=" top-0 w-full h-[910px] md:h-[756px] ">
       <div className="relative w-full h-full">
@@ -31,16 +51,16 @@ const HeroSection = () => {
                 Hello, I&lsquo;m Edwin Anderson
               </div>
               <div className="font-bold text-6xl md:text-8xl tracking-tight">
-                <p>
+                <p className="tracking-in-expand ">
                   FRONT
                   <span
-                    className="font-charm whitespace-nowrap text-5xl md:text-8xl text-chart-5"
+                    className="font-charm whitespace-nowrap text-5xl md:text-8xl text-primary"
                     style={{ fontWeight: '400' }}
                   >
                     END
                   </span>
                 </p>
-                <p>DEVELOPER</p>
+                <p className="tracking-in-expand">DEVELOPER</p>
               </div>
               <div className="text-sm md:text-lg text-neutral-400">
                 Passionate about frontend development, I focus on crafting
@@ -63,9 +83,12 @@ const HeroSection = () => {
                 </Link>
               </Button>
             </div>
-            <div className="mx-auto h-auto ">
+            <div ref={ref} className="mx-auto h-auto ">
               {/* right side */}
-              <div className="relative w-[252px] md:w-[341px] h-[430px] md:h-[671px]">
+              <motion.div
+                style={{ y: cardY }}
+                className="relative w-[252px] md:w-[341px] h-[430px] md:h-[671px]"
+              >
                 <Image
                   src="/images/idCard.svg"
                   alt="Id Card"
@@ -73,7 +96,7 @@ const HeroSection = () => {
                   height={671}
                   className=" absolute object-cover -translate-y-[68px] md:-translate-y-[112px]"
                 />
-                <div className="relative w-full h-full overflow-hidden">
+                <motion.div className="relative w-full h-full overflow-hidden">
                   <Image
                     src="/images/decoration-idcard.svg"
                     alt="decoation"
@@ -88,8 +111,8 @@ const HeroSection = () => {
                     height={671}
                     className="absolute w-full bottom-0 -translate-y-0 md:-translate-y-[112px]"
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>

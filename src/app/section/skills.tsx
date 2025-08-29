@@ -1,12 +1,21 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import { SkillsData } from '../../../data/skills-data';
+import { motion } from 'framer-motion';
 
 const SkillsSection = () => {
   return (
     <section id="skills" className="relative w-full py-10 md:py-20 ">
       {/* background */}
-      <div className=" absolute -z-10 w-full h-full -translate-y-[40px] md:-translate-y-[80px]">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: 0.5 }}
+        className=" absolute -z-10 w-full h-full -translate-y-[40px] md:-translate-y-[80px]"
+      >
         <div
           className="absolute -z-10 w-full h-full
            bg-radial-[at_0%_100%] from-[#149BB0]/60 to-[#149BB0]/0 to-[50%]"
@@ -18,9 +27,15 @@ const SkillsSection = () => {
           height={488}
           className="bottom-0 absolute -z-10 md:ml-36"
         />
-      </div>
+      </motion.div>
 
-      <div className=" w-full h-full px-4 md:px-35  ">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: 0.5 }}
+        className=" w-full h-full px-4 md:px-35  "
+      >
         <div className="flex w-full justify-center mb-13 ">
           <div className="w-full flex flex-col items-center gap-4">
             <div className="text-display-md md:text-display-2xl font-bold text-white">
@@ -49,8 +64,12 @@ const SkillsSection = () => {
             </thead>
             <tbody>
               {SkillsData.map((row) => (
-                <tr
+                <motion.tr
                   key={row.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.5 + row.id * 0.1 }}
                   className="h-[72px] w-full border-b-2 border-neutral-800"
                 >
                   <td className=" text-lg md:text-sm text-neutral-300">
@@ -76,12 +95,12 @@ const SkillsSection = () => {
                       />
                     </div>
                   </td>
-                </tr>
+                </motion.tr>
               ))}
             </tbody>
           </table>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -7,8 +7,9 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { ErrorDialog } from '@/components/ui/ErrorDialog';
 import { SuccessDialog } from '@/components/ui/SuccessDialog';
+import { motion } from 'framer-motion';
 
-export default function ContactUsSection() {
+export default function ContactSection() {
   const [successOpen, setSuccessOpen] = React.useState(false);
   const [errorOpen, setErrorOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
@@ -70,7 +71,13 @@ export default function ContactUsSection() {
     <section id="contact" className="relative w-full px-5 md:px-20 ">
       {/* background */}
 
-      <div className=" absolute -z-10 w-full h-full -translate-x-5 md:-translate-x-20 ">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: 0.5 }}
+        className=" absolute -z-10 w-full h-full -translate-x-5 md:-translate-x-20 "
+      >
         <div className="absolute w-full h-full bg-linear-to-t from-white/0  to-black/100" />
         <div
           className="absolute -z-10 w-full h-full
@@ -84,11 +91,17 @@ export default function ContactUsSection() {
           height={488}
           className="bottom-0 absolute -z-10 w-full h-full object-cover"
         />
-      </div>
+      </motion.div>
 
       <div className="flex flex-col md:flex-row justify-between pb-12 w-full">
         <div className="flex flex-col md:flex-row justify-between gap-10">
-          <div className=" flex flex-col gap-4 bg-black border-2 border-neutral-900 rounded-2xl py-10 px-6 ">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            className=" flex flex-col gap-4 bg-black border-2 border-neutral-900 rounded-2xl py-10 px-6 "
+          >
             <div className="text-display-md md:text-display-2xl font-bold text-white">
               Let’s{' '}
               <span className="text-contact-highlight">Build Something</span>{' '}
@@ -107,9 +120,15 @@ export default function ContactUsSection() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
           <div className=" flex flex-col justify-between py-10 ">
-            <div className="flex flex-col gap-3">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="flex flex-col gap-3"
+            >
               <div className="flex flex-col ">
                 {/* address */}
                 <div className="text-xl font-semibold text-white">Address</div>
@@ -165,11 +184,17 @@ export default function ContactUsSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="text-display-md md:text-display-3xl text-white font-bold">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.7 }}
+              className="text-display-md md:text-display-3xl text-white font-bold"
+            >
               GET IN TOUCH
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

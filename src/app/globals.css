@@ -224,3 +224,46 @@ body {
     @apply max-w-360 ;
   }
 }
+
+
+
+.tracking-in-expand {
+  -webkit-animation: tracking-in-expand 0.7s linear both;
+          animation: tracking-in-expand 0.7s linear both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes progress {
+  from { width: 0; }
+  to   { width: var(--target-width); } /* use the CSS var */
+}
+
+.animate-progress {
+  animation: progress 5s ease-out forwards;
+  width: 0; /* start state */
+}

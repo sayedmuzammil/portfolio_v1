@@ -10,7 +10,7 @@ export const navigationData: NavigationDataProps[] = [
   },
   {
     label: 'Skill',
-    href: '#skill',
+    href: '#skills',
   },
   {
     label: 'Projects',

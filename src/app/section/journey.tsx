@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import { JourneyData, type JourneyProps } from '../../../data/journey-data';
+import { motion } from 'framer-motion';
 
 const JourneySection = () => {
   return (
@@ -8,7 +11,13 @@ const JourneySection = () => {
       {/* background */}
 
       <div className=" w-full h-full   ">
-        <div className="flex w-full justify-start mb-10 md:mb-13 ">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, delay: 0.5 }}
+          className="flex w-full justify-start mb-10 md:mb-13 "
+        >
           <div className="w-full flex flex-col items-start gap-4">
             <div className="text-display-md md:text-display-2xl font-bold text-white">
               My Journey in Tech
@@ -18,11 +27,15 @@ const JourneySection = () => {
               me grow as a builder and problem-solver.{' '}
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className=" flex flex-col md:flex-row gap-4">
           {JourneyData.map((item: JourneyProps) => (
-            <div
+            <motion.div
               key={item.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.5 + item.id * 0.1 }}
               className="relative w-full md:max-w-[366px] flex flex-col gap-5 border border-neutral-900 p-5 rounded-2xl"
             >
               <div
@@ -53,7 +66,7 @@ const JourneySection = () => {
                   <Image src={item.icon} alt="icon" width={128} height={40} />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

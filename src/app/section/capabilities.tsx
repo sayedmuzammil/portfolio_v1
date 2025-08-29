@@ -9,8 +9,8 @@ const CapabilitiesSection = () => {
   return (
     <div className="w-full mt-20 md:mt-0">
       <div className="relative h-15.5 md:h-[108px] overflow-hidden bg-primary">
-        <div className="w-full overflow-hidden mix-blend-luminosity">
-          <Marquee className="py-4">
+        <div className="w-full h-full overflow-hidden mix-blend-luminosity">
+          <Marquee className="py-4 h-full">
             {CapabilitiesData.map((item) => (
               <li
                 key={`${item.capability}`}
@@ -24,7 +24,7 @@ const CapabilitiesSection = () => {
                   alt="icon-capabilities"
                   width={60}
                   height={60}
-                  className="ml-3.5 inline-block h-[32px] w-[32px] md:h-[60px] md:w-[60px]"
+                  className="ml-[3rem] inline-block h-[32px] w-[32px] md:h-[60px] md:w-[60px]"
                 />
               </li>
             ))}
