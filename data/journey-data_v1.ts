@@ -21,7 +21,7 @@ export const JourneyData: JourneyProps[] = [
     role: 'Frontend Developer',
     durationStart: '2024',
     durationEnd: '2025',
-    desc: 'Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.',
+    desc: 'Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability',
     icon: '/icons/icon-dribble.svg',
   },
   {
