@@ -23,7 +23,7 @@ const ToolsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: tool.id * 0.1 }}
-              className="group flex flex-row flex-grow border h-10 md:h-15 w-full px-3 gap-2 md:gap-3 rounded-md md:font-bold bg-gray-950 text-white justify-center items-center hover:scale-105  duration-300 ease-in-out hover:-translate-y-1 transition delay-150 shadow-md md:shadow-lg shadow-mode1-100/50 hover:bg-mode1-300/60 border-mode1-300 "
+              className="group flex flex-row flex-grow border h-10 md:h-15 w-full px-3 gap-2 md:gap-3 rounded-md md:font-bold bg-gray-950 text-white justify-center items-center hover:scale-105  duration-300 ease-in-out hover:-translate-y-1 transition delay-150 shadow-md md:shadow-lg shadow-mode1-accent/50 hover:bg-mode1-accent/60 border-mode1-accent "
             >
               <div className="max-w-10 md:h-10 md:max-w-15 bg-transparent flex flex-row justify-center items-center">
                 <Image
@@ -45,7 +45,7 @@ const ToolsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: tool.id * 0.1 }}
-              className="group flex flex-row flex-grow border h-10 md:h-15 w-full px-3 gap-2 md:gap-3 rounded-md md:font-bold bg-gray-950 text-white justify-center items-center hover:scale-105  duration-300 ease-in-out hover:-translate-y-1 transition delay-150 shadow-md md:shadow-lg shadow-mode2-100/50 hover:bg-mode2-300/60 border-mode2-300"
+              className="group flex flex-row flex-grow border h-10 md:h-15 w-full px-3 gap-2 md:gap-3 rounded-md md:font-bold bg-gray-950 text-white justify-center items-center hover:scale-105  duration-300 ease-in-out hover:-translate-y-1 transition delay-150 shadow-md md:shadow-lg shadow-mode2-accent/50 hover:bg-mode2-accent/60 border-mode2-accent"
             >
               <div className="max-w-10 md:h-10 md:max-w-15 bg-transparent flex flex-row justify-center items-center">
                 <Image

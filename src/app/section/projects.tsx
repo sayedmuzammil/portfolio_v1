@@ -78,7 +78,7 @@ const PortfoliosSection = () => {
                         />
                       </div>
                       {selectedProject === item.id ? (
-                        <div className="h-full w-200 p-4 border  rounded-md  flex bg-gray-950 text-white justify-center items-center hover:scale-105  duration-500 transition-all shadow-lg shadow-mode1-100/50 border-mode1-300">
+                        <div className="h-full w-200 p-4 border  rounded-md  flex bg-gray-950 text-white justify-center items-center hover:scale-105  duration-500 transition-all shadow-lg shadow-mode1-100/50 border-mode1-accent">
                           <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ const PortfoliosSection = () => {
                           >
                             <div className="flex justify-between items-center mb-5 font-bold">
                               <div className="text-2xl"> {item.title} </div>
-                              <div className="bg-mode1-200 border-border px-2 py-1 rounded-md text-sm m-1">
+                              <div className="bg-mode1-200 border-mode1-accent px-2 py-1 rounded-md text-sm m-1">
                                 {' '}
                                 {item.role}{' '}
                               </div>
@@ -110,7 +110,7 @@ const PortfoliosSection = () => {
                               {item.tags.map((tag) => (
                                 <div
                                   key={tag}
-                                  className="bg-mode1-200 border-border px-2 py-1 rounded-md text-sm m-1"
+                                  className="bg-mode1-200 border-mode1-accent px-2 py-1 rounded-md text-sm m-1"
                                 >
                                   {tag}
                                 </div>
@@ -119,8 +119,8 @@ const PortfoliosSection = () => {
                           </motion.div>
                         </div>
                       ) : (
-                        <div className="h-full w-20 border rounded-md  flex font-bold bg-gray-950  justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all shadow-lg shadow-mode1-100/50 hover:bg-mode1-300/60 border-mode1-300">
-                          <div className="text-white h-10 w-10 rounded-full border border-mode1-300 flex justify-center items-center bg-mode1-200 ">
+                        <div className="h-full w-20 border rounded-md  flex font-bold bg-gray-950  justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all shadow-lg shadow-mode1-100/50 hover:bg-mode1-300/60 border-mode1-accent">
+                          <div className="text-white h-10 w-10 rounded-full border border-mode1-accent flex justify-center items-center bg-mode1-200 ">
                             {item.id}
                           </div>
                         </div>
@@ -144,7 +144,7 @@ const PortfoliosSection = () => {
                         />
                       </div>
                       {selectedProject === item.id ? (
-                        <div className="h-full w-200 p-4 border  rounded-md  flex bg-gray-950 text-white justify-center items-center hover:scale-105  duration-500 transition-all shadow-lg shadow-mode2-100/50 border-mode2-300">
+                        <div className="h-full w-200 p-4 border  rounded-md  flex bg-gray-950  justify-center items-center hover:scale-105  duration-500 transition-all shadow-lg shadow-mode2-accent/50 border-mode2-accent text-mode2-text">
                           <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -153,10 +153,6 @@ const PortfoliosSection = () => {
                           >
                             <div className="flex justify-between items-center mb-5 font-bold">
                               <div className="text-2xl"> {item.title} </div>
-                              <div className="bg-mode2-200 border-border px-2 py-1 rounded-md text-sm m-1">
-                                {' '}
-                                {item.role}{' '}
-                              </div>
                             </div>
 
                             <div className="text-md"> {item.desc} </div>
@@ -167,7 +163,7 @@ const PortfoliosSection = () => {
                                   key={impact}
                                   className="flex items-start gap-2 text-sm"
                                 >
-                                  <Check className="w-4 h-4 text-mode2-100 mt-[2px]" />
+                                  <Check className="w-4 h-4 text-mode2-accent mt-[2px]" />
                                   <span>{impact}</span>
                                 </li>
                               ))}
@@ -176,7 +172,7 @@ const PortfoliosSection = () => {
                               {item.tags.map((tag) => (
                                 <div
                                   key={tag}
-                                  className="bg-mode2-200 border-border px-2 py-1 rounded-md text-sm m-1"
+                                  className="text-mode2-text bg-mode2-100/50 border-mode2-accent px-2 py-1 rounded-md text-sm m-1"
                                 >
                                   {tag}
                                 </div>
@@ -185,8 +181,8 @@ const PortfoliosSection = () => {
                           </motion.div>
                         </div>
                       ) : (
-                        <div className="h-full w-20 border rounded-md  flex font-bold bg-gray-950 text-white justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all shadow-lg shadow-mode2-100/50 hover:bg-mode2-300/60 border-mode2-300">
-                          <div className="text-white h-10 w-10 rounded-full border border-mode2-300 flex justify-center items-center bg-mode2-200 ">
+                        <div className="h-full w-20 border rounded-md  flex font-bold bg-gray-950 text-white justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all shadow-lg shadow-mode2-accent/50 hover:bg-mode2-300/60 border-mode2-accent">
+                          <div className="text-mode2-text bg-mode2-100/50 border-mode2-accent h-10 w-10 rounded-full border  flex justify-center items-center  ">
                             {item.id}
                           </div>
                         </div>
@@ -217,14 +213,14 @@ const PortfoliosSection = () => {
                       </div>
 
                       {selectedProject2.id === item.id ? (
-                        <div className="h-12 w-12 border flex font-bold rounded-lg  text-white justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all shadow-lg  hover:bg-mode1-300/60 border-mode1-300 bg-mode1-200 shadow-mode1-100/50">
+                        <div className="h-12 w-12 border flex font-bold rounded-lg  text-white justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all shadow-lg  hover:bg-mode1-300/60 border-mode1-accent bg-mode1-200 shadow-mode1-100/50">
                           <div className=" h-10 w-10 flex justify-center items-center text-white">
                             {item.id}
                           </div>
                         </div>
                       ) : (
-                        <div className="h-10 w-10  rounded-md  flex font-bold bg-gray-950 text-white justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all  hover:bg-mode1-300/60 border-mode1-300">
-                          <div className=" h-8 w-8 rounded-full border  flex justify-center items-center text-background bg-mode1-200 border-mode1-300 ">
+                        <div className="h-10 w-10  rounded-md  flex font-bold bg-gray-950 text-white justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all  hover:bg-mode1-300/60 border-mode1-accent">
+                          <div className=" h-8 w-8 rounded-full border  flex justify-center items-center text-background bg-mode1-200 border-mode1-accent ">
                             {item.id}
                           </div>
                         </div>
@@ -254,7 +250,7 @@ const PortfoliosSection = () => {
                           {' '}
                           {selectedProject2.title}{' '}
                         </div>
-                        <div className="bg-mode1-200 border-border px-2 py-1 rounded-md text-sm m-1">
+                        <div className="bg-mode1-200 border-mode1-accent px-2 py-1 rounded-md text-sm m-1">
                           {' '}
                           {selectedProject2.role}{' '}
                         </div>
@@ -277,7 +273,7 @@ const PortfoliosSection = () => {
                         {selectedProject2.tags.map((tag) => (
                           <div
                             key={tag}
-                            className="bg-mode1-200 border-border px-2 py-1 rounded-md text-sm m-1"
+                            className="bg-mode1-200 border-mode1-accent px-2 py-1 rounded-md text-sm m-1"
                           >
                             {tag}
                           </div>
@@ -308,14 +304,14 @@ const PortfoliosSection = () => {
                       </div>
 
                       {selectedProject2.id === item.id ? (
-                        <div className="h-12 w-12 border flex font-bold rounded-lg  text-white justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all shadow-lg  hover:bg-mode2-300/60 border-mode2-300 bg-mode2-200 shadow-mode2-100/50">
+                        <div className="h-12 w-12 border flex font-bold rounded-lg  text-white justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all shadow-lg  hover:bg-mode2-300/60 border-mode2-accent bg-mode2-100/50 shadow-mode2-accent/50">
                           <div className=" h-10 w-10 flex justify-center items-center text-white">
                             {item.id}
                           </div>
                         </div>
                       ) : (
-                        <div className="h-10 w-10  rounded-md  flex font-bold bg-gray-950 text-white justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all  hover:bg-mode2-300/60 border-mode2-300">
-                          <div className=" h-8 w-8 rounded-full border  flex justify-center items-center text-background bg-mode2-200 border-mode2-300 ">
+                        <div className="h-10 w-10  rounded-md  flex font-bold bg-gray-950 text-mode2-text justify-center items-center hover:scale-105  duration-500 hover:-translate-y-1 transition-all  hover:bg-mode2-300/60 border-mode2-accent">
+                          <div className=" h-8 w-8 rounded-full border  flex justify-center items-center text-mode2-text bg-mode2-100/50 border-mode2-accent ">
                             {item.id}
                           </div>
                         </div>
@@ -323,7 +319,7 @@ const PortfoliosSection = () => {
                     </div>
                   ))}
                 </div>
-                <AnimatePresence mode="wait" initial={false}>
+                <AnimatePresence mode="wait" initial={true}>
                   <motion.div
                     key={selectedProject2.id}
                     initial={{ opacity: 0, x: -16 }}
@@ -337,17 +333,13 @@ const PortfoliosSection = () => {
                       y: -12,
                       transition: { duration: 0.18, ease: EASE_IN },
                     }}
-                    className="min-h-90 w-full border-2 border-white text-white "
+                    className="min-h-90 w-full border-2 border-mode2-accent text-mode2-text "
                   >
                     <motion.div className="flex flex-col h-full gap-5 p-4">
                       <div className="flex justify-between items-center font-bold">
                         <div className="text-2xl">
                           {' '}
                           {selectedProject2.title}{' '}
-                        </div>
-                        <div className="bg-mode2-200 border-border px-2 py-1 rounded-md text-sm m-1">
-                          {' '}
-                          {selectedProject2.role}{' '}
                         </div>
                       </div>
 
@@ -359,7 +351,7 @@ const PortfoliosSection = () => {
                             key={impact}
                             className="flex items-start gap-2 text-sm"
                           >
-                            <Check className="w-4 h-4 text-mode2-100 mt-[2px]" />
+                            <Check className="w-4 h-4 text-mode2-accent mt-[2px]" />
                             <span>{impact}</span>
                           </li>
                         ))}
@@ -368,7 +360,7 @@ const PortfoliosSection = () => {
                         {selectedProject2.tags.map((tag) => (
                           <div
                             key={tag}
-                            className="bg-mode2-200 border-border px-2 py-1 rounded-md text-sm m-1"
+                            className="text-mode2-text bg-mode2-100/50 border-mode2-accent px-2 py-1 rounded-md text-sm m-1"
                           >
                             {tag}
                           </div>

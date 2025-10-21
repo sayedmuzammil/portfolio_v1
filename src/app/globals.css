@@ -71,13 +71,26 @@
   --neutral-800: #252B37;
   --neutral-900: #181D27;
   --neutral-950: #0A0D12;
-  --primary-100: #AAF3FF;
-  --primary-200: #43AFC0;
-  --primary-300: #149BB0;
-  --primary-400: #075864;
-  --mode2-100: oklch(0.5459 0.2154 262.75);
-  --mode2-200: oklch(0.4323 0.2629 265.99);
-  --mode2-300: oklch(0.6231 0.188 259.81);
+  --primary-100: #075864;
+  --primary-200: #149BB0;
+  --primary-300: #43AFC0; 
+  --primary-background: #043A46;
+  --primary-background2: #149BB0;
+  --primary-accent: #F5A25D;
+  --primary-accent2: #E86E4D;
+  --primary-text: #DCE5E9;
+
+
+  --secondary-100: oklch(0.5459 0.2154 262.75);
+  --secondary-200: oklch(0.4323 0.2629 265.99);
+  --secondary-300: oklch(0.6231 0.188 259.81);
+  --secondary-background: #0B0B1E;
+  --secondary-background2: #141432;
+  --secondary-accent: #A6FF8F;
+  --secondary-accent2: #FF80BF;
+  --secondary-text: #EAEAEA;
+
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
@@ -87,7 +100,6 @@
   --popover-foreground: oklch(0.129 0.042 264.695);
   --primary:var(--primary-300);
   --primary-foreground: oklch(0.984 0.003 247.858);
-
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -158,15 +170,23 @@
   --color-contact-highlight: var(--primary-300);
   --color-success-background: var(--primary-400);
   --color-failed-background: var(--destructive);
-    --color-mode1-100 : var(--primary-100);
+  --color-mode1-100 : var(--primary-100);
   --color-mode1-200 : var(--primary-200);
   --color-mode1-300 : var(--primary-300);
-  --color-mode1-400 : var(--primary-400);
-  --color-mode2-100 : var(--mode2-100);
-  --color-mode2-200 : var(--mode2-200);
-  --color-mode2-300 : var(--mode2-300);
+  --color-mode1-background : var(--primary-background);
+  --color-mode1-background2 : var(--primary-background2);
+  --color-mode1-accent : var(--primary-accent);
+  --color-mode1-accent2 : var(--primary-accent2);
+  --color-mode1-text : var(--primary-text);
 
-
+  --color-mode2-100 : var(--secondary-100);
+  --color-mode2-200 : var(--secondary-200);
+  --color-mode2-300 : var(--secondary-300);
+  --color-mode2-background : var(--secondary-background);
+  --color-mode2-background2 : var(--secondary-background2);
+  --color-mode2-accent : var(--secondary-accent);
+  --color-mode2-accent2 : var(--secondary-accent2);
+  --color-mode2-text : var(--secondary-text);
 
 
 

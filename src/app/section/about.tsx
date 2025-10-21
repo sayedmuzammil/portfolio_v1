@@ -27,7 +27,7 @@ export const fadeSlide = {
   exit: { opacity: 0, y: -8, transition: { duration: 0.16, ease: EASE_IN } },
 };
 
-const HighlightsSection = () => {
+const AboutSection = () => {
   const mode = useModeContext();
 
   return (
@@ -37,10 +37,10 @@ const HighlightsSection = () => {
     >
       <div className="relative w-full h-full">
         <div className="flex flex-col gap-8 mx-4 md:mx-30 min-h-svh justify-center items-center ">
-          <AnimatePresence mode="wait" initial={false}>
+          <AnimatePresence mode="wait" initial={true}>
             <motion.div
               key={mode.mode}
-              {...fadeSlide}
+              // {...fadeSlide}
               className="flex flex-col justify-start md:justify-center items-start md:items-center w-full"
             >
               <motion.div
@@ -103,7 +103,7 @@ const HighlightsSection = () => {
                         className="flex flex-col gap-3 md:gap-6 justify-between py-0"
                       >
                         <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-transparent">
-                          <item.icon className="text-mode1-200 w-10 h-10" />
+                          <item.icon className="text-mode1-accent w-10 h-10" />
                         </div>
                         <motion.div>
                           <div className="text-xl font-bold text-white">
@@ -125,7 +125,7 @@ const HighlightsSection = () => {
                         className="flex flex-col gap md:gap-6 justify-between py-0"
                       >
                         <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-transparent">
-                          <item.icon className="text-mode2-300 w-7 h-7 md:w-10 md:h-10" />
+                          <item.icon className="text-mode2-accent w-7 h-7 md:w-10 md:h-10" />
                         </div>
                         <motion.div>
                           <div className="text-xl font-bold text-white">
@@ -156,7 +156,7 @@ const HighlightsSection = () => {
                               className="flex flex-col gap-3 md:gap-6 justify-between py-0"
                             >
                               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-transparent">
-                                <item.icon className="text-mode1-200 w-10 h-10" />
+                                <item.icon className="text-mode1-accent w-10 h-10" />
                               </div>
                               <motion.div>
                                 <div className="text-xl font-bold text-white">
@@ -183,7 +183,7 @@ const HighlightsSection = () => {
                               className="flex flex-col gap-3 md:gap-6 justify-between py-0"
                             >
                               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-transparent">
-                                <item.icon className="text-mode2-300 w-10 h-10" />
+                                <item.icon className="text-mode2-accent w-10 h-10" />
                               </div>
                               <motion.div>
                                 <div className="text-xl font-bold text-white">
@@ -201,16 +201,16 @@ const HighlightsSection = () => {
                     className={`w-7 h-7 
                     ${
                       mode.mode === 'Leader'
-                        ? 'bg-mode1-200 hover:bg-mode1-200/90'
-                        : 'bg-mode2-300 hover:bg-mode2-300/90 '
+                        ? 'bg-mode1-300 hover:bg-mode1-200/90'
+                        : 'bg-mode2-300 hover:bg-mode2-200/90 '
                     }`}
                   />
                   <CarouselNext
                     className={`w-7 h-7 
                     ${
                       mode.mode === 'Leader'
-                        ? 'bg-mode1-200 hover:bg-mode1-200/90'
-                        : 'bg-mode2-300 hover:bg-mode2-300/90 '
+                        ? 'bg-mode1-300 hover:bg-mode1-200/90'
+                        : 'bg-mode2-300 hover:bg-mode2-200/90 '
                     }`}
                   />
                 </Carousel>
@@ -236,4 +236,4 @@ const HighlightsSection = () => {
   );
 };
 
-export default HighlightsSection;
+export default AboutSection;

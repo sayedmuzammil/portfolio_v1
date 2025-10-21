@@ -1,11 +1,11 @@
 import HeroSection from './section/hero';
 import Navbar from './section/navbar';
 // import CapabilitiesSection from './section/capabilities';
-import HighlightsSection from './section/highlights';
+import AboutSection from './section/about';
 // import ToolsSection from './section/tools';
 // import SkillsSection from './section/skills';
-import PortofoliosSection from './section/portfolios';
-import JourneySection from './section/journey';
+import PortofoliosSection from './section/projects';
+import JourneySection from './section/experience';
 // import TrustedBySection from './section/trusted-by';
 import ContactSection from './section/contact';
 // import QuestionsSection from './section/questions';
@@ -19,11 +19,11 @@ export default function Home() {
           <Navbar />
           <HeroSection />
           {/* <CapabilitiesSection /> */}
-          <HighlightsSection />
+          <AboutSection />
           {/* <ToolsSection /> */}
           {/* <SkillsSection /> */}
           <PortofoliosSection />
-          <JourneySection />
+          {/* <JourneySection /> */}
           {/* <TrustedBySection /> */}
           {/* <QuestionsSection /> */}
           <ContactSection />
