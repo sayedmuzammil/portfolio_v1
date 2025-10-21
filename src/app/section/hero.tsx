@@ -1,121 +1,172 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { Mail } from 'lucide-react';
+import { useModeContext } from '@/context/mode';
+import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from 'motion/react';
+
+// Easing presets (cubic-bezier)
+const EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const EASE_IN: [number, number, number, number] = [0.4, 0, 1, 1];
+
+export const fadeSlide = {
+  initial: { opacity: 0, y: 8 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.22, ease: EASE_OUT } },
+  exit: { opacity: 0, y: -8, transition: { duration: 0.16, ease: EASE_IN } },
+};
 
 const HeroSection = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  });
+  const { mode, toggleMode } = useModeContext();
 
-  const reduce = useReducedMotion();
-
-  const cardY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -30]); // slowest
-  // const decoY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -60]); // medium
-  // const photoY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -90]); // fastest / front-most
+  const handleModeChange = (newMode: 'Leader' | 'Builder') => {
+    if (mode !== newMode) {
+      toggleMode();
+    }
+  };
 
   return (
-    <section id="about" className=" top-0 w-full h-[910px] md:h-[756px] ">
+    <section
+      id="hero"
+      className="h-svh w-full md:h-[100svh]  border-b border-border/10 top-0 "
+    >
       <div className="relative w-full h-full">
         {/* background */}
-        <div className=" absolute -z-10 w-full h-full -translate-y-[112px]">
-          <div
-            className="absolute -z-10 w-full h-full
-           bg-radial-[at_0%_0%] from-[#149BB0]/60 to-[#149BB0]/0 to-[50%]"
-          />
+        <div className="absolute -z-10 w-full h-full md:-translate-y-[112px]">
+          <AnimatePresence mode="wait" initial={false}>
+            {mode === 'Leader' && (
+              <motion.div
+                key="bg-leader"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.35, ease: EASE_OUT },
+                }}
+                exit={{
+                  y: 0,
+                  transition: { duration: 0.15, ease: EASE_IN },
+                }}
+                className="absolute inset-0"
+              >
+                <div className="absolute inset-0 bg-radial-[at_0%_0%] from-mode1-300/60 to-mode1-300/0 to-[50%]" />
+              </motion.div>
+            )}
+            {mode === 'Builder' && (
+              <motion.div
+                key="bg-builder"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.35, ease: EASE_OUT },
+                }}
+                exit={{
+                  y: 0,
+                  transition: { duration: 0.15, ease: EASE_IN },
+                }}
+                className="absolute inset-0"
+              >
+                <div className="absolute inset-0 bg-radial-[at_0%_0%] from-mode2-300/60 to-mode2-300/0 to-[50%]" />
+              </motion.div>
+            )}
+          </AnimatePresence>
           <Image
             src="/images/bg-hero.png"
-            alt="Edwin"
+            alt="Sayed"
             width={1074}
             height={488}
-            className="top-0 absolute -z-10 md:ml-36"
+            className="top-0 absolute -z-10 md:ml-36 brightness-50"
           />
         </div>
 
-        <div className=" w-full h-full px-4 md:px-35  ">
-          <div className="flex flex-col-reverse md:flex-row justify-between gap-6 md:gap-36 h-full">
-            {/* left side */}
-            <div className="  text-white flex flex-col justify-center gap-8 items-start">
-              <div className="text-md md:text-xl text-neutral-25">
-                Hello, I&lsquo;m Edwin Anderson
-              </div>
-              <div className="font-bold text-6xl md:text-8xl tracking-tight">
-                <p className="tracking-in-expand ">
-                  FRONT
-                  <span
-                    className="font-charm whitespace-nowrap text-5xl md:text-8xl text-primary"
-                    style={{ fontWeight: '400' }}
-                  >
-                    END
-                  </span>
-                </p>
-                <p className="tracking-in-expand">DEVELOPER</p>
-              </div>
-              <div className="text-sm md:text-lg text-neutral-400">
-                Passionate about frontend development, I focus on crafting
-                digital products that are visually polished,
-                performance-optimized, and deliver a consistent experience
-                across all platforms.
-              </div>
-
-              <Button
-                variant="flood"
-                size="lg"
-                className="h-13 w-full md:w-[257px] text-sm md:text-md font-semibold"
-              >
-                <Link
-                  href="#contact"
-                  className="flex flex-row items-center gap-2"
-                >
-                  <Mail className="mr-2" />
-                  <span>Hire Me</span>
-                </Link>
-              </Button>
+        <div className="w-full h-full px-4 md:px-35 text-white justify-center flex flex-col gap-8 items-center">
+          <div className="flex flex-row gap-3 border-2 border-neutral-800 bg-gray-700 md:mx-5 w-full md:w-70 py-2 px-4 justify-center items-center rounded-full">
+            <div
+              onClick={() => handleModeChange('Leader')}
+              className={`border p-3 w-full text-center rounded-full ${
+                mode === 'Leader'
+                  ? 'bg-mode1-200 cursor-pointer border-border font-bold'
+                  : 'bg-transparent text-muted-foreground border-muted-foreground'
+              }`}
+            >
+              Leader
             </div>
-            <div ref={ref} className="mx-auto h-auto ">
-              {/* right side */}
+
+            <div className="h-8 w-px bg-muted-foreground" />
+
+            <div
+              onClick={() => handleModeChange('Builder')}
+              className={`border p-3 w-full text-center rounded-full ${
+                mode === 'Builder'
+                  ? 'bg-mode2-200 cursor-pointer border-border font-bold'
+                  : 'bg-transparent text-muted-foreground border-muted-foreground'
+              }`}
+            >
+              Builder
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 justify-center items-center text-center">
+            <div>Hello, i am</div>
+            <div className="text-5xl md:text-7xl font-bold">Sayed Muzammil</div>
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
-                style={{ y: cardY }}
-                className="relative w-[252px] md:w-[341px] h-[430px] md:h-[671px]"
+                key={mode}
+                {...fadeSlide}
+                className="text-lg md:text-2xl mb-5"
               >
-                <Image
-                  src="/images/idCard.svg"
-                  alt="Id Card"
-                  width={341}
-                  height={671}
-                  className=" absolute object-cover -translate-y-[68px] md:-translate-y-[112px]"
-                />
-                <motion.div className="relative w-full h-full overflow-hidden">
-                  <Image
-                    src="/images/decoration-idcard.svg"
-                    alt="decoation"
-                    width={341}
-                    height={671}
-                    className="absolute h-full"
-                  />
-                  <Image
-                    src="/images/photo-profile.png"
-                    alt="photo profile"
-                    width={341}
-                    height={671}
-                    className="absolute w-full bottom-0 -translate-y-0 md:-translate-y-[112px]"
-                  />
-                </motion.div>
+                {mode === 'Leader'
+                  ? 'Scrum Master & Project Manager'
+                  : 'Front-End Developer'}
               </motion.div>
+            </AnimatePresence>
+            <div className="text-2xl md:text-3xl text-center">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={`leader-build-${mode}`}
+                  {...fadeSlide}
+                  className={`font-bold text-4xl ${
+                    mode === 'Leader' ? 'text-mode1-300' : 'text-mode2-300'
+                  }`}
+                >
+                  {mode === 'Leader' ? ' LEAD ' : ' BUILD '}
+                </motion.span>
+              </AnimatePresence>
+              with strategy and{' '}
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={`solve-ship-${mode}`}
+                  {...fadeSlide}
+                  className={`font-bold text-4xl ${
+                    mode === 'Leader' ? 'text-mode1-300' : 'text-mode2-300'
+                  }`}
+                >
+                  {mode === 'Leader' ? ' SOLVE ' : ' SHIP '}
+                </motion.span>
+              </AnimatePresence>
+              impactful
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={`problems-products-${mode}`}
+                  {...fadeSlide}
+                  className={`font-bold text-4xl ${
+                    mode === 'Leader' ? 'text-mode1-300' : 'text-mode2-300'
+                  }`}
+                >
+                  {mode === 'Leader' ? ' PROBLEMS ' : ' PRODUCTS '}
+                </motion.span>
+              </AnimatePresence>
             </div>
           </div>
         </div>
+
+        <Link href="#about">
+          <Image
+            src="/icons/scroll-down.gif"
+            alt="Scroll to About"
+            width={48}
+            height={96}
+            className=" absolute bottom-2 md:bottom-5 left-1/2 -translate-x-1/2 animate-bounce "
+          />
+        </Link>
       </div>
     </section>
   );

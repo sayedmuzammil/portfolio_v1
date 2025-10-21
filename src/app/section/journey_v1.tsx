@@ -2,18 +2,15 @@
 
 import Image from 'next/image';
 import React from 'react';
-import { JourneyData, type JourneyProps } from '../../../data/journey-data';
+import { JourneyData, type JourneyProps } from '../../../data/journey-data_v1';
 import { motion } from 'framer-motion';
 
 const JourneySection = () => {
   return (
-    <section
-      id="journey"
-      className=" top-0 w-full h-svh -translate-y-12 md:-translate-y-16 border-b border-border/10"
-    >
+    <section className="relative w-full py-10 md:py-20 flex flex-col gap-12 px-4 md:px-35">
       {/* background */}
 
-      <div className="flex flex-col gap-8 mx-3 md:mx-30 h-svh justify-center ">
+      <div className=" w-full h-full   ">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -8,17 +8,17 @@ export const navigationData: NavigationDataProps[] = [
     label: 'About',
     href: '#about',
   },
-  {
-    label: 'Skill',
-    href: '#skills',
-  },
+  // {
+  //   label: 'Skill',
+  //   href: '#skills',
+  // },
   {
     label: 'Projects',
     href: '#projects',
   },
   {
-    label: 'FAQ',
-    href: '#faq',
+    label: 'Experiences',
+    href: '#journey',
   },
   {
     label: 'Contact',

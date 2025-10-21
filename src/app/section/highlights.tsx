@@ -2,108 +2,237 @@
 
 import Image from 'next/image';
 import React from 'react';
-import { HighlightsData } from '../../../data/highlights-data';
-import { motion } from 'framer-motion';
+import {
+  LeaderHighlightsData,
+  BuilderHighlightsData,
+} from '../../../data/highlights-data';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useModeContext } from '@/context/mode';
+import ToolsSection from './tools';
+import Link from 'next/link';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+
+const EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const EASE_IN: [number, number, number, number] = [0.4, 0, 1, 1];
+
+export const fadeSlide = {
+  initial: { opacity: 0, y: 8 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.22, ease: EASE_OUT } },
+  exit: { opacity: 0, y: -8, transition: { duration: 0.16, ease: EASE_IN } },
+};
 
 const HighlightsSection = () => {
+  const mode = useModeContext();
+
   return (
-    <div className="mx-3 md:mx-30 my-10 md:my-20  ">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.3, delay: 0.5 }}
-        className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 mb-6 md:mb-12  pb-6 md:pb-12 border-b border-neutral-800 w-full h-full "
-      >
-        {/* atas */}
-        <div className="text-white text-display-md md:text-display-xl font-bold max-w-[756px]">
-          I turn ideas and designs into functional, accessible, and performant
-          websites{' '}
-          <span className="text-primary">
-            using modern frontend technologies
-          </span>
-          .
-        </div>
-        <div className="flex flex-col md:min-h-[150px] justify-between items-start ">
-          <div className="text-neutral-400 text-lg ">About Me</div>
-          <div className="flex flex-row gap-4">
-            <div className="flex items-center justify-center w-10 h-10 bg-transparentx border border-neutral-800 rounded-full">
-              <Image
-                src="/icons/icon-facebook.svg"
-                alt="facebook-icon"
-                width={10}
-                height={20}
-              />
-            </div>
-            <div className="flex items-center justify-center w-10 h-10 bg-transparentx border border-neutral-800 rounded-full">
-              <Image
-                src="/icons/icon-instagram.svg"
-                alt="instagram-icon"
-                width={20}
-                height={20}
-              />
-            </div>
-            <div className="flex items-center justify-center w-10 h-10 bg-transparentx border border-neutral-800 rounded-full">
-              <Image
-                src="/icons/icon-linkedIn.svg"
-                alt="linkedIn-icon"
-                width={16}
-                height={16}
-              />
-            </div>
-            <div className="flex items-center justify-center w-10 h-10 bg-transparentx border border-neutral-800 rounded-full">
-              <Image
-                src="/icons/icon-tiktok.svg"
-                alt="tiktok-icon"
-                width={17}
-                height={20}
-              />
-            </div>
-          </div>
-        </div>
-      </motion.div>
-      <div>
-        {/* bawah */}
-        <div className="flex flex-col md:flex-row gap-10 justify-between items-center ">
-          <Image
-            src="/images/photo-highlight.svg"
-            alt="photo-highlight"
-            width={453}
-            height={513}
-            className="w-full md:w-1/2 object-fit-cover"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 divide-y-2 md:divide-y-0 divide-neutral-800">
-            {/* HighlightsSection */}
-            {HighlightsData.map((item, id) => (
+    <section
+      id="about"
+      className="h-svh w-full md:h-[100svh]  border-b border-border/10 top-0 "
+    >
+      <div className="relative w-full h-full">
+        <div className="flex flex-col gap-8 mx-4 md:mx-30 min-h-svh justify-center items-center ">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={mode.mode}
+              {...fadeSlide}
+              className="flex flex-col justify-start md:justify-center items-start md:items-center w-full"
+            >
               <motion.div
-                key={id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.3 + id * 0.1 }}
-                className="flex flex-col gap-6 justify-between py-6 md:py-0 "
+                transition={{ duration: 0.3, delay: 0.5 }}
+                className="flex w-full justify-start mb-3 md:mb-10"
               >
-                <div className="w-10 h-10">
-                  <Image
-                    src={item.icon}
-                    alt={item.title}
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 object-fit-cover"
-                  />
-                </div>
-                <motion.div>
-                  <div className="text-xl font-bold text-white">
-                    {item.title}
+                <div className="w-full flex flex-col items-start gap-4">
+                  <div className="text-display-md md:text-[clamp(2.5rem,5vw,5rem)] font-bold text-white">
+                    About Me
                   </div>
-                  <div className="text-md text-neutral-400">{item.desc}</div>
-                </motion.div>
+                </div>
               </motion.div>
-            ))}
+
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+                className="text-[clamp(1rem,2vw,2rem)] md:font-bold w-full"
+              >
+                {mode.mode === 'Leader' ? (
+                  <div className="text-white">
+                    With over a decade in IT and 5+ years guiding Agile teams, I
+                    turn strategy into delivery. I help teams{' '}
+                    <span className="text-mode1-300 font-bold">
+                      collaborate, resolve challenges early, and deliver
+                      outcomes that matter.
+                    </span>
+                    My leadership blends data-driven insight, empathy, and a
+                    focus on continuous improvement.
+                  </div>
+                ) : (
+                  <div className="text-white ">
+                    I design and develop web experiences that are fast,
+                    accessible, and visually consistent. I transform ideas into{' '}
+                    <span className="text-mode2-300 font-bold">
+                      clean, scalable interfaces{' '}
+                    </span>
+                    that users love to interact with.
+                  </div>
+                )}
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="pb-6 w-full">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 w-full">
+                {mode.mode === 'Leader'
+                  ? LeaderHighlightsData.map((item, id) => (
+                      <motion.div
+                        key={id}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.3 + id * 0.1 }}
+                        className="flex flex-col gap-3 md:gap-6 justify-between py-0"
+                      >
+                        <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-transparent">
+                          <item.icon className="text-mode1-200 w-10 h-10" />
+                        </div>
+                        <motion.div>
+                          <div className="text-xl font-bold text-white">
+                            {item.title}
+                          </div>
+                          <div className="text-md text-neutral-400">
+                            {item.desc}
+                          </div>
+                        </motion.div>
+                      </motion.div>
+                    ))
+                  : BuilderHighlightsData.map((item, id) => (
+                      <motion.div
+                        key={id}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.3 + id * 0.1 }}
+                        className="flex flex-col gap md:gap-6 justify-between py-0"
+                      >
+                        <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-transparent">
+                          <item.icon className="text-mode2-300 w-7 h-7 md:w-10 md:h-10" />
+                        </div>
+                        <motion.div>
+                          <div className="text-xl font-bold text-white">
+                            {item.title}
+                          </div>
+                          <div className="text-md text-neutral-400">
+                            {item.desc}
+                          </div>
+                        </motion.div>
+                      </motion.div>
+                    ))}
+              </div>
+              <div className="md:hidden flex justify-center w-full ">
+                <Carousel className="max-w-[80%] ">
+                  <CarouselContent>
+                    {mode.mode === 'Leader'
+                      ? LeaderHighlightsData.map((item, id) => (
+                          <CarouselItem key={id}>
+                            <motion.div
+                              key={id}
+                              initial={{ opacity: 0, y: 50 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{
+                                duration: 0.3,
+                                delay: 0.3 + id * 0.1,
+                              }}
+                              className="flex flex-col gap-3 md:gap-6 justify-between py-0"
+                            >
+                              <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-transparent">
+                                <item.icon className="text-mode1-200 w-10 h-10" />
+                              </div>
+                              <motion.div>
+                                <div className="text-xl font-bold text-white">
+                                  {item.title}
+                                </div>
+                                <div className="text-md text-neutral-400">
+                                  {item.desc}
+                                </div>
+                              </motion.div>
+                            </motion.div>
+                          </CarouselItem>
+                        ))
+                      : BuilderHighlightsData.map((item, id) => (
+                          <CarouselItem key={id}>
+                            <motion.div
+                              key={id}
+                              initial={{ opacity: 0, y: 50 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{
+                                duration: 0.3,
+                                delay: 0.3 + id * 0.1,
+                              }}
+                              className="flex flex-col gap-3 md:gap-6 justify-between py-0"
+                            >
+                              <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-transparent">
+                                <item.icon className="text-mode2-300 w-10 h-10" />
+                              </div>
+                              <motion.div>
+                                <div className="text-xl font-bold text-white">
+                                  {item.title}
+                                </div>
+                                <div className="text-md text-neutral-400">
+                                  {item.desc}
+                                </div>
+                              </motion.div>
+                            </motion.div>
+                          </CarouselItem>
+                        ))}
+                  </CarouselContent>
+                  <CarouselPrevious
+                    className={`w-7 h-7 
+                    ${
+                      mode.mode === 'Leader'
+                        ? 'bg-mode1-200 hover:bg-mode1-200/90'
+                        : 'bg-mode2-300 hover:bg-mode2-300/90 '
+                    }`}
+                  />
+                  <CarouselNext
+                    className={`w-7 h-7 
+                    ${
+                      mode.mode === 'Leader'
+                        ? 'bg-mode1-200 hover:bg-mode1-200/90'
+                        : 'bg-mode2-300 hover:bg-mode2-300/90 '
+                    }`}
+                  />
+                </Carousel>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full md:w-[80%]">
+            <ToolsSection />
           </div>
         </div>
+        <Link href="#projects">
+          <Image
+            src="/icons/scroll-down.gif"
+            alt="Scroll to Projects"
+            width={48}
+            height={96}
+            className=" absolute bottom-2 md:bottom-5 left-1/2 -translate-x-1/2 animate-bounce "
+          />
+        </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

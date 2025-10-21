@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Charm } from 'next/font/google';
 import './globals.css';
+import { ModeProvider } from '@/context/mode';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${charm.variable} font-sans antialiased`}
       >
-        {children}
+        <ModeProvider>{children}</ModeProvider>
       </body>
     </html>
   );
